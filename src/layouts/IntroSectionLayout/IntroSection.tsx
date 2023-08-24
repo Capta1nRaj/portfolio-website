@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 import LocationIcon from '../../images/IntroSectionIcons/LocationIcon'
-import HoverImage from '../../components/HoverImage'
+import HoverImage from '../../components/NavBarComponents/HoverImage'
 
 const buttonProperties = `px-4 py-2 uppercase border border-reddish text-xl transition-all duration-500 ease-in-out hover:bg-reddish font-medium hover:drop-shadow-[2px_2px_4px_#ffffff]`
 
@@ -36,24 +36,20 @@ const IntroSection = () => {
 
                         <div className="social-media flex lg:justify-normal justify-center gap-5">
                             <HoverImage
-                                imageSrc1={"/assets/images/SocialMediaIcons/instagram-b&w.png"}
-                                imageSrc2={"/assets/images/SocialMediaIcons/instagram-color.png"}
-                                imageAlt={"facebook"}
+                                imageSrc={"instagram"}
+                                imageAlt={"instagram"}
                             />
                             <HoverImage
-                                imageSrc1={"/assets/images/SocialMediaIcons/linkedin-b&w.png"}
-                                imageSrc2={"/assets/images/SocialMediaIcons/linkedin-color.png"}
-                                imageAlt={"facebook"}
+                                imageSrc={"linkedin"}
+                                imageAlt={"linkedin"}
                             />
                             <HoverImage
-                                imageSrc1={"/assets/images/SocialMediaIcons/twitter-b&w.png"}
-                                imageSrc2={"/assets/images/SocialMediaIcons/twitter-color.png"}
-                                imageAlt={"facebook"}
+                                imageSrc={"twitter"}
+                                imageAlt={"twitter"}
                             />
                             <HoverImage
-                                imageSrc1={"/assets/images/SocialMediaIcons/github-b&w.png"}
-                                imageSrc2={"/assets/images/SocialMediaIcons/github-color.png"}
-                                imageAlt={"facebook"}
+                                imageSrc={"github"}
+                                imageAlt={"github"}
                             />
                         </div>
 
