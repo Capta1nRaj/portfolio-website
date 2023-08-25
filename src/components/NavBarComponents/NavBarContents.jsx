@@ -9,7 +9,7 @@ const navBarRightSideCSS = `flex md:flex-row flex-col items-center cursor-pointe
 export default function NavBarContents() {
     return (
         <>
-            <Link href="#about">
+            <Link href="#about-me">
                 <div className={`${navBarRightSideCSS}`}> <AboutMeIcon /> about </div>
             </Link>
 

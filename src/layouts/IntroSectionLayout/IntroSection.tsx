@@ -8,7 +8,7 @@ const buttonProperties = `px-4 py-2 uppercase border border-reddish text-xl tran
 const IntroSection = () => {
     return (
         <>
-            <div className="intro-section-layout bg-[url('/assets/images/IntroSectionImages/background-image.jpg')] h-screen bg-no-repeat bg-cover flex bg-fixed bg-center">
+            <div className="intro-section-layout bg-[url('/assets/images/IntroSectionImages/background-image.jpg')] h-full bg-no-repeat bg-cover flex bg-center text-white py-16">
                 <div className="max-width max-w-screen-xl w-full m-auto flex lg:flex-row flex-col-reverse justify-between lg:pl-4 lg:pr-10 px-2 lg:text-left text-center lg:gap-0 gap-10">
                     <div className="left-side lg:my-auto lg:mx-0 m-auto max-w-2xl lg:space-y-5 space-y-3">
 
@@ -20,7 +20,7 @@ const IntroSection = () => {
                             A year-long journey mastering Next.js and Node.js as a Full Stack Web Developer by day, and embracing gaming excitement by night. Let`s unite coding excellence and gaming passion in this unique tech odyssey.
                         </div>
 
-                        <div className="line-3 lg:block flex lg:justify-normal justify-center lg:space-y-3 space-y-0">
+                        <div className="line-3 lg:block flex lg:justify-normal justify-center lg:space-y-3 space-y-0 teeny:text-base text-sm">
                             <div className="location font-bold flex items-center">
                                 <LocationIcon /> <span className='teeny:ml-1 ml-0'>Patna, Bihar</span>
                             </div>

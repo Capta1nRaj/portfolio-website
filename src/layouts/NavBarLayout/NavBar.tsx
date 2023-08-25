@@ -9,9 +9,9 @@ const NavBar = () => {
     const navBarContents = NavBarContents();
 
     return (
-        <>
+        <div className='bg-lightblack text-white'>
             {/* For Desktop & Tablet */}
-            <div className="lg:block hidden nav-bar-layout bg-lightblack" id="/">
+            <div className="lg:block hidden nav-bar-layout" id="/">
                 <div className="max-width flex justify-between items-center max-w-screen-xl m-auto px-4 py-2">
 
                     <div className="nav-bar-left-side cursor-pointer">
@@ -33,7 +33,7 @@ const NavBar = () => {
                     <HamburgerMenuIconAnimated />
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 
