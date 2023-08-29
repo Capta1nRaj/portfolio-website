@@ -9,7 +9,7 @@ const SkillsSection = () => {
                 <Headings
                     title="skills"
                 />
-                <div className="grid lg:grid-cols-6 teeny:grid-cols-4 grid-cols-3 justify-items-center max-w-screen-xl m-auto text-center gap-y-10">
+                <div className="grid lg:grid-cols-6 teeny:grid-cols-4 grid-cols-3 justify-items-center max-w-screen-xl m-auto text-center gap-y-10 font-semibold">
                     <SkillsImage
                         imageAndAltName='html'
                         imageName='HTML'

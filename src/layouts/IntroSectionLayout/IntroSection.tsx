@@ -9,8 +9,8 @@ const IntroSection = () => {
     return (
         <>
             <div className="intro-section-layout bg-[url('/assets/images/IntroSectionImages/background-image.jpg')] h-full bg-no-repeat bg-cover flex bg-center text-white py-16">
-                <div className="max-width max-w-screen-xl w-full m-auto flex lg:flex-row flex-col-reverse justify-between lg:pl-4 lg:pr-10 px-2 lg:text-left text-center lg:gap-0 gap-10">
-                    <div className="left-side lg:my-auto lg:mx-0 m-auto max-w-2xl lg:space-y-5 space-y-3">
+                <div className="max-width max-w-screen-xl w-full m-auto flex lg:flex-row flex-col-reverse justify-between lg:pl-4 lg:pr-10 lg:px-8 px-2 lg:text-left text-center lg:gap-0 gap-10">
+                    <div className="left-side lg:my-auto lg:mx-0 m-auto xl:max-w-2xl lg:max-w-[35rem] max-w-2xl lg:space-y-5 space-y-3">
 
                         <div className="my-name sm:text-6xl text-3xl font-bold">
                             <span className='drop-shadow-[1px_1px_3px_#ffffff]'>Hi, I`m</span> <span className='text-reddish drop-shadow-[1px_1px_3px_#ff3258]'>Priyal Raj</span>
@@ -57,7 +57,7 @@ const IntroSection = () => {
 
                     <div className="right-side">
                         <div className="profile-pic drop-shadow-[10px_10px_5px_#ff3258]">
-                            <Image className='m-auto lg:w-[450px] sm:w-96 w-72' width={450} height={450} src="/assets/images/IntroSectionImages/profile-pic.jpg" alt="" />
+                            <Image className='m-auto lg:w-[450px] sm:w-96 w-72' width={450} height={450} src="/assets/images/IntroSectionImages/profile-pic-2.jpg" alt="" />
                         </div>
                     </div>
                 </div>
