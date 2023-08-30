@@ -10,7 +10,7 @@ const GetInTouch = () => {
                 <Headings
                     title="get in touch"
                 />
-                <div className='contact-details font-bold teeny:text-2xl text-base flex flex-col items-center gap-2'>
+                <div className='contact-details teeny:text-2xl text-base flex flex-col items-center gap-2'>
                     <div className="email-id flex gap-2 items-center">
                         <Image className='invert' width={24} height={18} src="/assets/images/GetInTouchSectionImages/mainIcon.png" alt="" />
                         priyalrajwork@gmail.com
@@ -20,7 +20,6 @@ const GetInTouch = () => {
                         +91 8709688090
                     </div>
                     <div className="social-media font-light flex flex-col gap-2 mt-8 text-center">
-                        You can also drop me your details on these platforms.
                         <div className="social-media-icons flex justify-center gap-5">
                             <HoverImage
                                 imageSrc={"instagram"}
@@ -38,6 +37,7 @@ const GetInTouch = () => {
                                 imageLink={"https://twitter.com/capta1n_raj"}
                             />
                         </div>
+                        <div className='text-base'>You can also drop me your details on these platforms.</div>
                     </div>
                 </div>
             </div>
