@@ -32,25 +32,29 @@ const IntroSection = () => {
 
                         <div className="resume-get-in-touch flex lg:justify-normal justify-center gap-2">
                             <Link rel="noopener noreferrer" target="_blank" href={'https://flowcv.com/resume/ehet59nqt6'}><button className={`${buttonProperties}`}>resume</button></Link>
-                            <button className={`${buttonProperties}`}>get in touch</button>
+                            <Link href={"#contact"}><button className={`${buttonProperties}`}>get in touch</button></Link>
                         </div>
 
                         <div className="social-media flex lg:justify-normal justify-center gap-5">
                             <HoverImage
                                 imageSrc={"instagram"}
                                 imageAlt={"instagram"}
+                                imageLink={"https://www.instagram.com/capta1n_raj"}
                             />
                             <HoverImage
                                 imageSrc={"linkedin"}
                                 imageAlt={"linkedin"}
+                                imageLink={"https://www.linkedin.com/in/priyalraj99"}
                             />
                             <HoverImage
                                 imageSrc={"twitter"}
                                 imageAlt={"twitter"}
+                                imageLink={"https://twitter.com/capta1n_raj"}
                             />
                             <HoverImage
                                 imageSrc={"github"}
                                 imageAlt={"github"}
+                                imageLink={"https://github.com/Capta1nRaj"}
                             />
                         </div>
 

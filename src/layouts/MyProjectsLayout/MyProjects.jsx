@@ -41,7 +41,7 @@ const MyProjects = () => {
                     {ProjectList.map((item, index) => {
                         return (
                             <ProjectListBox
-                                key={item.index}
+                                key={index}
                                 customFlexCSS={index % 2 === 0 ? "lg:flex-row flex-col-reverse" : "lg:flex-row-reverse flex-col-reverse"}
                                 title={item.title}
                                 description={item.description}

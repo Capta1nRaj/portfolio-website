@@ -25,14 +25,17 @@ const GetInTouch = () => {
                             <HoverImage
                                 imageSrc={"instagram"}
                                 imageAlt={"instagram"}
+                                imageLink={"https://www.instagram.com/capta1n_raj"}
                             />
                             <HoverImage
                                 imageSrc={"linkedin"}
                                 imageAlt={"linkedin"}
+                                imageLink={"https://www.linkedin.com/in/priyalraj99"}
                             />
                             <HoverImage
                                 imageSrc={"twitter"}
                                 imageAlt={"twitter"}
+                                imageLink={"https://twitter.com/capta1n_raj"}
                             />
                         </div>
                     </div>

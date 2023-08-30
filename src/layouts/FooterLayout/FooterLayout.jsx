@@ -3,7 +3,6 @@ import React from 'react'
 const FooterLayout = () => {
 
     const year = new Date().getFullYear()
-    console.log(year)
 
     return (
         <>
