@@ -4,10 +4,8 @@ import React from 'react';
 
 const ProjectListBox = ({ customFlexCSS, title, description, skills, link, image }) => {
 
-    console.log(customFlexCSS)
-
     return (
-        <div className={`project flex ${customFlexCSS} bg-lightblack  drop-shadow-[4px_4px_3px_#ff3258] rounded-3xl`}>
+        <div className={`project flex ${customFlexCSS} bg-lightblack  drop-shadow-[3px_3px_3px_#ff3258] rounded-3xl`}>
             <div className="left-side capitalize flex flex-col sm:gap-8 gap-4 sm:p-5 p-3 m-auto">
                 <div className="heading sm:text-4xl text-3xl font-bold text-reddish underline underline-offset-4 uppercase">
                     {title}

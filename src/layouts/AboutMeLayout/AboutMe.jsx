@@ -17,8 +17,8 @@ const AboutMe = () => {
                 <div className="max-wdith max-w-screen-xl m-auto flex lg:flex-row flex-col justify-between px-2 lg:gap-0 gap-6">
 
                     <div className="left-side">
-                        <div className="profile-pic drop-shadow-[10px_10px_5px_#ff3258]">
-                            <Image className='m-auto lg:w-[450px] sm:w-96 w-72' width={450} height={450} src="/assets/images/IntroSectionImages/profile-pic.jpg" alt="" />
+                        <div className="profile-pic drop-shadow-[4px_4px_4px_#ff3258]">
+                            <Image className='m-auto lg:w-[450px] sm:w-96 w-72' width={450} height={450} src="/assets/images/IntroSectionImages/profile-pic-2.jpg" alt="" />
                         </div>
                     </div>
 
@@ -28,7 +28,7 @@ const AboutMe = () => {
                             I am a seasoned full stack web developer, seamlessly merging my passion for gaming with my coding expertise. A website developer enthusiast since the age of 13, I`ve honed my skills to craft captivating and functional websites. With a dual identity of a coder and gamer, I navigate pixels and code with equal fervor.
                         </div>
 
-                        <div className="resume-get-in-touch flex lg:justify-normal justify-center gap-2">
+                        <div className="my-skills-and-project-section flex lg:justify-normal justify-center gap-2">
                             <Link href="#skills"><div className={`${buttonProperties}`}>my skills</div></Link>
                             <Link href="#projects"><div className={`${buttonProperties}`}>my projects</div></Link>
                         </div>

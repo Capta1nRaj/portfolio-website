@@ -21,7 +21,7 @@ export default function NavBarContents() {
                 <div className={`${navBarRightSideCSS}`}>  <ProjectsIcon /> projects </div>
             </Link>
 
-            <Link href="#contact-us">
+            <Link href="#contact">
                 <div className={`${navBarRightSideCSS}`}> <ContactIcon /> contact </div>
             </Link>
         </>

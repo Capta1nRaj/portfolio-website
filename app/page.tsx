@@ -4,6 +4,8 @@ import IntroSection from '../src/layouts/IntroSectionLayout/IntroSection'
 import SkillsSection from '../src/layouts/SkillsSectionLayout/SkillsSection'
 import AboutMeIcon from '../src/layouts/AboutMeLayout/AboutMe'
 import MyProjects from '../src/layouts/MyProjectsLayout/MyProjects'
+import GetInTouch from '../src/layouts/GetInTouch/GetInTouch'
+import Footer from '../src/layouts/FooterLayout/FooterLayout'
 
 export default function Home() {
   return (
@@ -13,6 +15,8 @@ export default function Home() {
       <AboutMeIcon />
       <SkillsSection />
       <MyProjects />
+      <GetInTouch />
+      <Footer />
     </>
   )
 }

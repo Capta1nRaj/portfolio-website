@@ -2,6 +2,7 @@ import Image from 'next/image'
 import React from 'react'
 import LocationIcon from '../../images/IntroSectionIcons/LocationIcon'
 import HoverImage from '../../components/NavBarComponents/HoverImage'
+import Link from 'next/link'
 
 const buttonProperties = `px-4 py-2 uppercase border border-reddish text-xl transition-all duration-500 ease-in-out hover:bg-reddish font-medium hover:drop-shadow-[2px_2px_4px_#ffffff]`
 
@@ -30,7 +31,7 @@ const IntroSection = () => {
                         </div>
 
                         <div className="resume-get-in-touch flex lg:justify-normal justify-center gap-2">
-                            <button className={`${buttonProperties}`}>resume</button>
+                            <Link rel="noopener noreferrer" target="_blank" href={'https://flowcv.com/resume/ehet59nqt6'}><button className={`${buttonProperties}`}>resume</button></Link>
                             <button className={`${buttonProperties}`}>get in touch</button>
                         </div>
 
@@ -56,8 +57,8 @@ const IntroSection = () => {
                     </div>
 
                     <div className="right-side">
-                        <div className="profile-pic drop-shadow-[10px_10px_5px_#ff3258]">
-                            <Image className='m-auto lg:w-[450px] sm:w-96 w-72' width={450} height={450} src="/assets/images/IntroSectionImages/profile-pic-2.jpg" alt="" />
+                        <div className="profile-pic drop-shadow-[4px_4px_4px_#ff3258]">
+                            <Image className='m-auto lg:w-[450px] sm:w-96 w-72' width={450} height={450} src="/assets/images/IntroSectionImages/profile-pic.jpg" alt="" />
                         </div>
                     </div>
                 </div>
