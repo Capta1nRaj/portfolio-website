@@ -14,11 +14,11 @@ const IntroSection = () => {
                     <div className="left-side lg:my-auto lg:mx-0 m-auto xl:max-w-2xl lg:max-w-[35rem] max-w-2xl lg:space-y-5 space-y-3">
 
                         <div className="my-name sm:text-6xl text-3xl font-bold">
-                            <span className='drop-shadow-[1px_1px_3px_#ffffff]'>Hi, I`m</span> <span className='text-reddish drop-shadow-[1px_1px_3px_#ff3258]'>Priyal Raj</span>
+                            <span className='drop-shadow-[1px_1px_1px_#ffffff]'>Hi, I`m</span> <span className='text-reddish drop-shadow-[1px_1px_1px_#ff3258]'>Priyal Raj</span>
                         </div>
 
                         <div className="about-me sm:text-xl text-sm font-semibold">
-                            A year-long journey mastering Next.js and Node.js as a Full Stack Web Developer by day, and embracing gaming excitement by night. Let`s unite coding excellence and gaming passion in this unique tech odyssey.
+                            A year-long journey mastering Next.js and Express.js aside with MongoDB as a Full Stack Web Developer by day, and embracing gaming excitement by night. Let`s unite coding excellence and gaming passion in this unique tech odyssey.
                         </div>
 
                         <div className="line-3 lg:block flex lg:justify-normal justify-center lg:space-y-3 space-y-0 teeny:text-base text-sm">
