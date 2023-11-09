@@ -27,7 +27,7 @@ const MyProjects = () => {
             title: 'Connect2Mongodb',
             description: 'My first ever npm module is a lightweight and easy-to-use library that allows you to connect to MongoDB with both dynamic and fixed databases.',
             link: 'https://www.npmjs.com/package/connect2mongodb',
-            skills: ['Express.js', 'MongoDB', 'Mongoose'],
+            skills: ['TypeScript', 'Express.js', 'MongoDB', 'Mongoose'],
             image: '/assets/images/MyProjectsSectionImages/connect2mongodb.png',
             gitHubLink: "https://github.com/Capta1nRaj/connect2mongodb"
         },
