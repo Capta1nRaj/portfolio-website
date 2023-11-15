@@ -45,10 +45,10 @@ const SkillsSection = () => {
                         imageName='MongoDB'
                     />
 
-                    {/* <SkillsImage
+                    <SkillsImage
                         imageAndAltName='nodejs'
                         imageName='Node.js'
-                    /> */}
+                    />
 
                     <SkillsImage
                         imageAndAltName='expressjs'
