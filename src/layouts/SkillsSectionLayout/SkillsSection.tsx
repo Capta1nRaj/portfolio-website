@@ -46,6 +46,11 @@ const SkillsSection = () => {
                     />
 
                     <SkillsImage
+                        imageAndAltName='mongoose'
+                        imageName='Mongoose'
+                    />
+
+                    <SkillsImage
                         imageAndAltName='nodejs'
                         imageName='Node.js'
                     />
@@ -53,11 +58,6 @@ const SkillsSection = () => {
                     <SkillsImage
                         imageAndAltName='expressjs'
                         imageName='Express.js'
-                    />
-
-                    <SkillsImage
-                        imageAndAltName='mongoose'
-                        imageName='Mongoose'
                     />
 
                     <SkillsImage
@@ -70,10 +70,15 @@ const SkillsSection = () => {
                         imageName='Figma'
                     />
 
-                    {/* <SkillsImage
+                    <SkillsImage
                         imageAndAltName='chartjs'
                         imageName='Chart.js'
-                    /> */}
+                    />
+
+                    <SkillsImage
+                        imageAndAltName='typescript'
+                        imageName='Typescript'
+                    />
                 </div>
             </div>
         </div>

@@ -22,6 +22,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/MyProjectsComponents/ProjectListBox.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/MyProjectsComponents/ProjectListBox.tsx", "src/components/NavBarComponents/NavBarContents.tsx"],
   "exclude": ["node_modules"]
 }

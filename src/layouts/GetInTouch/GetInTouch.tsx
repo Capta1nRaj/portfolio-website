@@ -39,6 +39,12 @@ const GetInTouch = () => {
                         </div>
                         <div className='text-base'>You can also drop me your details on these platforms.</div>
                     </div>
+
+                    <div className='text-base capitalize font-bold text-center flex items-center justify-center gap-2'>
+                        <Image width={30} height={30} className='invert' src="/assets/images/MyProjectsSectionImages/eye-icon.png" alt="eye-icon" />
+                        website views:- 100
+                    </div>
+
                 </div>
             </div>
         </div>

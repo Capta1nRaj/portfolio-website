@@ -1,8 +1,8 @@
 import Link from "next/link";
-import AboutMeIcon from '../../../src/images/NavBarIcons/AboutMeIcon'
-import SkillsIcon from '../../../src/images/NavBarIcons/SkillsIcon'
-import ProjectsIcon from '../../../src/images/NavBarIcons/ProjectsIcon'
-import ContactIcon from '../../../src/images/NavBarIcons/ContactIcon'
+import AboutMeIcon from '../../images/NavBarIcons/AboutMeIcon'
+import SkillsIcon from '../../images/NavBarIcons/SkillsIcon'
+import ProjectsIcon from '../../images/NavBarIcons/ProjectsIcon'
+import ContactIcon from '../../images/NavBarIcons/ContactIcon'
 
 const navBarRightSideCSS = `flex md:flex-row flex-col items-center cursor-pointer md:gap-2 gap-0 uppercase font-medium transition-all duration-500 ease-in-out hover:text-reddish`
 

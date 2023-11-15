@@ -1,7 +1,5 @@
-import Headings from '../../../src/components/Headings'
+import Headings from '../../components/Headings'
 import React from 'react'
-import Image from 'next/image'
-import Link from 'next/link'
 import ProjectListBox from '@/src/components/MyProjectsComponents/ProjectListBox'
 
 const MyProjects = () => {
@@ -13,7 +11,8 @@ const MyProjects = () => {
             link: '',
             skills: ['Next.js', 'TypeScript', 'Tailwind CSS', 'MongoDB', 'Mongoose', 'Chart.js', 'Email Armor'],
             image: '/assets/images/MyProjectsSectionImages/ecomm-admin-panel.png',
-            gitHubLink: ''
+            gitHubLink: '',
+            imageAlt: 'ecomm-admin-panel'
         },
         {
             title: 'email armor',
@@ -21,7 +20,8 @@ const MyProjects = () => {
             link: 'https://www.npmjs.com/package/email-armor',
             skills: ['TypeScript', 'Express.js', 'Crypto', 'MongoDB', 'Mongoose', 'Sendgrid', 'ESLint', 'Inquirer'],
             image: '/assets/images/MyProjectsSectionImages/email-armor.png',
-            gitHubLink: 'https://github.com/Capta1nRaj/email-armor'
+            gitHubLink: 'https://github.com/Capta1nRaj/email-armor',
+            imageAlt: 'email-armor'
         },
         {
             title: 'Connect2MongoDB',
@@ -29,15 +29,17 @@ const MyProjects = () => {
             link: 'https://www.npmjs.com/package/connect2mongodb',
             skills: ['TypeScript', 'Express.js', 'MongoDB', 'Mongoose'],
             image: '/assets/images/MyProjectsSectionImages/connect2mongodb.png',
-            gitHubLink: 'https://github.com/Capta1nRaj/connect2mongodb'
+            gitHubLink: 'https://github.com/Capta1nRaj/connect2mongodb',
+            imageAlt: 'connect2mongodb'
         },
         {
             title: 'loop card',
             description: 'Loop Card is a contact sharing project based on NFC, crafted by me and my team at Alphamint Labs. I took charge of developing the complete reminder feature, which involves a lot of intricate logic.',
             link: 'https://www.loopcard.club',
-            skills: ['Next.js', 'Tailwind CSS', 'MongoDB', 'Mongoose', 'NextAuth.js'],
+            skills: ['Next.js', 'Tailwind CSS', 'MongoDB', 'Mongoose', 'NextAuth.js', 'Stripe'],
             image: '/assets/images/MyProjectsSectionImages/loopcard.png',
-            gitHubLink: ''
+            gitHubLink: '',
+            imageAlt: 'loop-card'
         }
     ]
 
@@ -58,7 +60,7 @@ const MyProjects = () => {
                                 skills={item.skills}
                                 link={item.link}
                                 image={item.image}
-                                gitHubLink={item.gitHubLink} />
+                                gitHubLink={item.gitHubLink} imageAlt={item.imageAlt} />
                         )
                     })}
                 </div>

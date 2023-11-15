@@ -2,7 +2,18 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
-const ProjectListBox = ({ customFlexCSS, title, description, skills, link, image, gitHubLink }) => {
+interface ProjectListInterface {
+    customFlexCSS: string,
+    title: string,
+    description: string,
+    skills: string[],
+    link: string,
+    image: string,
+    gitHubLink: string,
+    imageAlt: string
+}
+
+const ProjectListBox: React.FC<ProjectListInterface> = ({ customFlexCSS, title, description, skills, link, image, gitHubLink, imageAlt }) => {
     return (
         <>
             <div className={`project flex ${customFlexCSS} bg-lightblack  drop-shadow-[3px_3px_3px_#ff3258] rounded-3xl`}>
@@ -42,7 +53,7 @@ const ProjectListBox = ({ customFlexCSS, title, description, skills, link, image
                 </div>
 
                 <div className="right-side min-w-[50%] m-auto sm:p-5 p-3">
-                    <Image className='xl:w-[800px] w-full rounded-3xl' width={1000} height={1000} src={image} alt="" />
+                    <Image className='xl:w-[800px] w-full rounded-3xl' width={1000} height={1000} src={image} alt={imageAlt} />
                 </div>
             </div>
         </>
