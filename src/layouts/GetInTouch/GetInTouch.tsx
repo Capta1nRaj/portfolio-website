@@ -7,13 +7,40 @@ const GetInTouch = () => {
 
     let isFunctionCalled = false;
     const [views, setviews] = useState(null)
+
     async function updateViewsCount() {
-        if (isFunctionCalled === false) {
-            isFunctionCalled = true;
-            const response = await fetch(`/api/updateViews`);
-            const data = await response.json();
-            setviews(data.viewsCount.views);
-            console.log(data?.viewsCount?.views);
+        if (typeof window !== 'undefined') {
+
+            let shouldIncrement = false;
+
+            if (!isFunctionCalled) {
+                const sessionValue = sessionStorage.getItem('deleteOnSessionClose');
+
+                if (sessionValue === null) {
+                    sessionStorage.setItem('deleteOnSessionClose', 'I-will-delete-myself-when-you-leave-the-session.');
+                    isFunctionCalled = true;
+                    shouldIncrement = true;
+                }
+            }
+
+            try {
+
+                const response = await fetch(`/api/updateViews`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ increment: shouldIncrement })
+                });
+
+                if (!response.ok) {
+                    throw new Error("HTTP error!, if possible, please raise a PR to notify me, thanks ♥.");
+                }
+
+                const data = await response.json();
+                setviews(data.viewsCount.views);
+
+            } catch (error) {
+                console.error("Failed to update views count, if possible, please raise a PR to notify me, thanks ♥.");
+            }
         }
     }
 
