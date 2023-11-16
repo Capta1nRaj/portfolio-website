@@ -10,7 +10,7 @@ const Logo1 = () => {
 
     return (
         <>
-            <Image onClick={() => router.push('/')} width={30} height={30} src="/assets/images/Logo/logo-1.png" alt="priyal raj logo 1" />
+            <Image className='w-auto h-auto' onClick={() => router.push('/')} width={30} height={30} src="/assets/images/Logo/logo-1.png" alt="priyal raj logo 1" />
         </>
     )
 }

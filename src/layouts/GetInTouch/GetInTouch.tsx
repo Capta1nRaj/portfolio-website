@@ -1,9 +1,24 @@
 import Headings from '@/src/components/Headings'
 import HoverImage from '@/src/components/NavBarComponents/HoverImage'
 import Image from 'next/image'
-import React from 'react'
+import React, { useState } from 'react'
 
 const GetInTouch = () => {
+
+    let isFunctionCalled = false;
+    const [views, setviews] = useState(null)
+    async function updateViewsCount() {
+        if (isFunctionCalled === false) {
+            isFunctionCalled = true;
+            const response = await fetch(`/api/updateViews`);
+            const data = await response.json();
+            setviews(data.viewsCount.views);
+            console.log(data?.viewsCount?.views);
+        }
+    }
+
+    updateViewsCount();
+
     return (
         <div className="contact-section-layout py-8 lg:px-8 px-2 bg-lightblack text-white" id='contact'>
             <div className="max-width max-w-screen-xl m-auto">
@@ -42,7 +57,7 @@ const GetInTouch = () => {
 
                     <div className='text-base capitalize font-bold text-center flex items-center justify-center gap-2'>
                         <Image width={30} height={30} className='invert' src="/assets/images/MyProjectsSectionImages/eye-icon.png" alt="eye-icon" />
-                        website views:- 100
+                        website views:- {views}
                     </div>
 
                 </div>
