@@ -6,6 +6,15 @@ const MyProjects = () => {
 
     const ProjectList = [
         {
+            title: 'BLYT',
+            description: 'Singapore`s ultimate online shopping haven - where style meets convenience in a seamless E-Comm experience. Elevate your retail game, the Lion City way.',
+            link: 'https://www.blyt.world',
+            skills: ['Next.js', 'TypeScript', 'Tailwind CSS', 'MongoDB', 'Mongoose', 'bcrypt', 'swiperjs', 'sharp', 'node-cache', 'Toastify', 'Pdf-Lib', 'JWT', 'sortableJS'],
+            image: '/assets/images/MyProjectsSectionImages/blyt.png',
+            gitHubLink: '',
+            imageAlt: 'blyt'
+        },
+        {
             title: 'e-comm admin panel',
             description: 'A seamless E-Comm admin panel crafted with Next.js. In this project, I implemented custom authentication using bcrypt.js, along with an inbuilt API for effortless user and product management, and more.',
             link: '',

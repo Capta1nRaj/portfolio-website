@@ -27,7 +27,7 @@ const ProjectListBox: React.FC<ProjectListInterface> = ({ customFlexCSS, title, 
                         {description}
                     </div>
 
-                    <div className="tech-stack-used flex flex-wrap gap-2 font-bold sm:text-base text-xs">
+                    <div className="tech-stack-used flex flex-wrap gap-2 font-bold sm:text-base text-xs normal-case">
                         {skills.map((skill, index) => (
                             <span key={index} className='bg-gray-500 sm:px-3 px-2 sm:py-2 py-1 rounded-3xl'>
                                 {skill}
