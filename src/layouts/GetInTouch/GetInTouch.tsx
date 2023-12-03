@@ -1,5 +1,6 @@
 import Headings from '@/src/components/Headings'
 import HoverImage from '@/src/components/NavBarComponents/HoverImage'
+import LoadingGIF from '@/src/images/CommonImages/LoadingGIF'
 import Image from 'next/image'
 import React, { useState } from 'react'
 
@@ -84,7 +85,8 @@ const GetInTouch = () => {
 
                     <div className='text-base capitalize font-bold text-center flex items-center justify-center gap-2'>
                         <Image width={30} height={30} className='invert' src="/assets/images/MyProjectsSectionImages/eye-icon.png" alt="eye-icon" />
-                        website views:- {views}
+                        website views:- {!views ? <LoadingGIF /> : `${views}`}
+                        {/* {views} */}
                     </div>
 
                 </div>
