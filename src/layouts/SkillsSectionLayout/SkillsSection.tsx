@@ -50,7 +50,7 @@ const SkillsSection = () => {
                         imageName='Mongoose'
                     />
 
-                    <SkillsImage
+                    {/* <SkillsImage
                         imageAndAltName='nodejs'
                         imageName='Node.js'
                     />
@@ -58,7 +58,7 @@ const SkillsSection = () => {
                     <SkillsImage
                         imageAndAltName='expressjs'
                         imageName='Express.js'
-                    />
+                    /> */}
 
                     <SkillsImage
                         imageAndAltName='git'

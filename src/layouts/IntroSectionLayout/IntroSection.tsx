@@ -18,7 +18,8 @@ const IntroSection = () => {
                         </div>
 
                         <div className="about-me sm:text-xl text-sm font-semibold">
-                            A year-long journey mastering Next.js and Express.js aside with MongoDB as a Full Stack Web Developer by day, and embracing gaming excitement by night. Let`s unite coding excellence and gaming passion in this unique tech odyssey.
+                            A year-long journey mastering Next.js as a Front-End Web Developer by day, and embracing gaming excitement by night. Let`s unite coding excellence and gaming passion in this unique tech odyssey.
+                            {/* A year-long journey mastering Next.js and Express.js aside with MongoDB as a Full Stack Web Developer by day, and embracing gaming excitement by night. Let`s unite coding excellence and gaming passion in this unique tech odyssey. */}
                         </div>
 
                         <div className="line-3 lg:block flex lg:justify-normal justify-center lg:space-y-3 space-y-0 teeny:text-base text-sm">

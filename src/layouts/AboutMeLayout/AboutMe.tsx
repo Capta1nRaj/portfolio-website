@@ -25,7 +25,8 @@ const AboutMe = () => {
                     <div className="right-side max-w-lg flex flex-col justify-center lg:items-start items-center lg:gap-14 gap-4 lg:m-0 m-auto lg:text-left text-center lg:text-lg text-base lg:font-medium font-normal">
                         <div className="title uppercase text-4xl font-bold">who am i?</div>
                         <div className="description">
-                            I am a seasoned full stack web developer, seamlessly merging my passion for gaming with my coding expertise. A website developer enthusiast since the age of 13, I`ve honed my skills to craft captivating and functional websites. With a dual identity of a coder and gamer, I navigate pixels and code with equal fervor.
+                            I am a seasoned Front-End web developer, seamlessly merging my passion for gaming with my coding expertise. A website developer enthusiast since the age of 13, I`ve honed my skills to craft captivating and functional websites. With a dual identity of a coder and gamer, I navigate pixels and code with equal fervor.
+                            {/* I am a seasoned full stack web developer, seamlessly merging my passion for gaming with my coding expertise. A website developer enthusiast since the age of 13, I`ve honed my skills to craft captivating and functional websites. With a dual identity of a coder and gamer, I navigate pixels and code with equal fervor. */}
                         </div>
 
                         <div className="my-skills-and-project-section flex lg:justify-normal justify-center gap-2">
