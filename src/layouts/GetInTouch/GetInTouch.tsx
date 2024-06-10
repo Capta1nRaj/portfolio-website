@@ -1,3 +1,5 @@
+'use client'
+
 import Headings from '@/src/components/Headings'
 import HoverImage from '@/src/components/NavBarComponents/HoverImage'
 import LoadingGIF from '@/src/images/CommonImages/LoadingGIF'

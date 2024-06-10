@@ -6,6 +6,15 @@ const MyProjects = () => {
 
     const ProjectList = [
         {
+            title: 'ShaveLinks',
+            description: 'ShaveLinks is a link shortener tool for streamlined sharing. Create concise, custom links effortlessly. Track engagement seamlessly. Simplify your online presence with ShaveLinks Shortener.',
+            link: 'https://shavelinks.com/shave-links-main',
+            skills: ['Next.js', 'TypeScript', 'Tailwind CSS', 'MongoDB', 'Mongoose', 'Email Armor', 'JWT'],
+            image: '/assets/images/MyProjectsSectionImages/shavelinks.png',
+            gitHubLink: '',
+            imageAlt: 'shavelinks'
+        },
+        {
             title: 'BLYT',
             description: 'Singapore`s ultimate online shopping haven - where style meets convenience in a seamless E-Comm experience. Elevate your retail game, the Lion City way.',
             link: 'https://www.blyt.world',
