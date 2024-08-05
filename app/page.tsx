@@ -1,5 +1,3 @@
-'use client'
-
 import NavBar from '../src/layouts/NavBarLayout/NavBar'
 import IntroSection from '../src/layouts/IntroSectionLayout/IntroSection'
 import SkillsSection from '../src/layouts/SkillsSectionLayout/SkillsSection'

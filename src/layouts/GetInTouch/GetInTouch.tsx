@@ -1,3 +1,5 @@
+'use client'
+
 import Headings from '@/src/components/Headings'
 import HoverImage from '@/src/components/NavBarComponents/HoverImage'
 import LoadingGIF from '@/src/images/CommonImages/LoadingGIF'
@@ -57,10 +59,6 @@ const GetInTouch = () => {
                     <div className="email-id flex gap-2 items-center">
                         <Image className='invert' width={24} height={18} src="/assets/images/GetInTouchSectionImages/mainIcon.png" alt="" />
                         priyalrajwork@gmail.com
-                    </div>
-                    <div className="contact-number flex gap-2 items-center">
-                        <Image width={24} height={24} src="/assets/images/GetInTouchSectionImages/callIcon.png" alt="" />
-                        +91 8709688090
                     </div>
                     <div className="social-media font-light flex flex-col gap-2 mt-8 text-center">
                         <div className="social-media-icons flex justify-center gap-5">
