@@ -26,18 +26,8 @@ body {
     rgb(var(--background-start-rgb));
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
-body::-webkit-scrollbar {
-  width: 4px;               /* width of the entire scrollbar */
-}
-body::-webkit-scrollbar-track {
-  background: #111111;        /* color of the tracking area */
-}
-body::-webkit-scrollbar-thumb {
-  background-color: #ff3258;    /* color of the scroll thumb */
-  border-radius: 20px;       /* roundness of the scroll thumb */
-  border: 3px solid #ff3258;  /* creates padding around scroll thumb */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
 }

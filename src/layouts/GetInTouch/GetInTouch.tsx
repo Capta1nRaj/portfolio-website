@@ -1,8 +1,8 @@
 'use client'
 
-import Headings from '@/src/components/Headings'
-import HoverImage from '@/src/components/NavBarComponents/HoverImage'
-import LoadingGIF from '@/src/images/CommonImages/LoadingGIF'
+import Headings from '@/components/Headings';
+import HoverImage from '@/components/NavBarComponents/HoverImage';
+import LoadingGIF from '@/images/CommonImages/LoadingGIF';
 import Image from 'next/image'
 import React, { useState } from 'react'
 

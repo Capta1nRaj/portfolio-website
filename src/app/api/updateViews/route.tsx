@@ -1,6 +1,6 @@
+import ViewsModel from '@/models/ViewsModel';
 import { connect2MongoDB } from 'connect2mongodb';
 import { NextResponse } from "next/server";
-import ViewsModel from '@/src/models/ViewsModel';
 
 export async function POST(request: Request) {
 

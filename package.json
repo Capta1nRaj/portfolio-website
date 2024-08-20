@@ -9,20 +9,21 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@next/third-parties": "^14.1.3",
-    "@types/node": "20.5.1",
-    "@types/react": "18.2.20",
-    "@types/react-dom": "18.2.7",
-    "autoprefixer": "10.4.15",
-    "connect2mongodb": "^1.0.7",
-    "eslint": "8.47.0",
-    "eslint-config-next": "13.4.19",
-    "mongoose": "^8.0.1",
-    "next": "13.4.19",
-    "postcss": "8.4.28",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "tailwindcss": "3.3.3",
-    "typescript": "5.1.6"
+    "@next/third-parties": "^14.2.5",
+    "connect2mongodb": "^1.1.35",
+    "mongoose": "^8.5.3",
+    "next": "14.2.5",
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.5",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
   }
 }
