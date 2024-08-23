@@ -25,13 +25,25 @@ async function getData(slug: string) {
     return await client.fetch(query);
 }
 
+
+function blocksToPlainText(blocks: any[]) {
+    return blocks
+        .map((block: { _type: string; children: any[]; }) => {
+            if (block._type !== 'block' || !block.children) {
+                return '';
+            }
+            return block.children.map((child: { text: any; }) => child.text).join('');
+        })
+        .join('\n\n');
+}
+
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
 
     const slug = params.slug;
     const data = await getData(slug);
 
     let title = data?.title || "No Post Found";
-    let content = data?.excerpt || "No Post Found";
+    let content = blocksToPlainText(data?.excerpt) || "No Post Found";
     const coverImage = urlFor(data.coverImage).url() || "https://priyalraj.com/favicon.ico";
 
     //! When length gets 50, remove the last word for better title
