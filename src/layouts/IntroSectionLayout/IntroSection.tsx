@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
 import LocationIcon from '../../images/IntroSectionIcons/LocationIcon'
-import HoverImage from '../../components/NavBarComponents/HoverImage'
 import Link from 'next/link'
 
 const buttonProperties = `px-4 py-2 uppercase border border-reddish text-xl transition-all duration-500 ease-in-out hover:bg-reddish font-medium hover:drop-shadow-[2px_2px_4px_#ffffff]`
@@ -36,26 +35,21 @@ const IntroSection = () => {
                         </div>
 
                         <div className="social-media flex lg:justify-normal justify-center gap-5">
-                            <HoverImage
-                                imageSrc={"instagram"}
-                                imageAlt={"instagram"}
-                                imageLink={"https://www.instagram.com/capta1n_raj"}
-                            />
-                            <HoverImage
-                                imageSrc={"linkedin"}
-                                imageAlt={"linkedin"}
-                                imageLink={"https://www.linkedin.com/in/priyalraj99"}
-                            />
-                            <HoverImage
-                                imageSrc={"twitter"}
-                                imageAlt={"twitter"}
-                                imageLink={"https://twitter.com/capta1n_raj"}
-                            />
-                            <HoverImage
-                                imageSrc={"github"}
-                                imageAlt={"github"}
-                                imageLink={"https://github.com/Capta1nRaj"}
-                            />
+                            <Link href={'https://www.instagram.com/capta1n_raj'} target='_blank'>
+                                <Image width={50} height={50} src="https://img.icons8.com/?size=50&id=32323&format=png&color=000000" alt="" />
+                            </Link>
+
+                            <Link href={'https://www.linkedin.com/in/priyalraj99'} target='_blank'>
+                                <Image width={50} height={50} src="https://img.icons8.com/?size=50&id=13930&format=png&color=000000" alt="" />
+                            </Link>
+
+                            <Link href={'https://twitter.com/capta1n_raj'} target='_blank'>
+                                <Image className='invert' width={50} height={50} src="https://img.icons8.com/?size=50&id=phOKFKYpe00C&format=png&color=000000" alt="" />
+                            </Link>
+
+                            <Link href={'https://github.com/Capta1nRaj'} target='_blank'>
+                                <Image width={50} height={50} src="https://img.icons8.com/?size=100&id=106562&format=png&color=FFFFFF" alt="" />
+                            </Link>
                         </div>
 
                     </div>
