@@ -14,8 +14,8 @@ export async function IncrementArticleViewsAction(blogID: string) {
 
     } catch (error) {
 
-        console.error("Database operation failed, if possible, please raise a PR to notify me, thanks ♥.");
+        console.error("Database operation failed, in IncrementArticleViewsAction, if possible, please raise a PR to notify me, thanks ♥.");
 
-        return { error: "Database operation failed, if possible, please raise a PR to notify me, thanks ♥.", status: 500 };
+        return { error: "Database operation failed, in IncrementArticleViewsAction, if possible, please raise a PR to notify me, thanks ♥.", status: 500 };
     }
 }

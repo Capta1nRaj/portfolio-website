@@ -34,8 +34,9 @@ const GetInTouch = () => {
             }
 
             try {
-                const { viewsCount } = await IncrementViewsAction(shouldIncrement);
-                setviews(viewsCount);
+                IncrementViewsAction(shouldIncrement)
+                    .then(({ viewsCount }) => { setviews(viewsCount); })
+                    .catch((error) => { console.error("Error incrementing views:", error); });
             } catch (error) {
                 console.error("Failed to update views count, if possible, please raise a PR to notify me, thanks ♥.");
             }

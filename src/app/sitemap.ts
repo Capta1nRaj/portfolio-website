@@ -17,10 +17,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const postsList = await getData();
 
     const postEntries: MetadataRoute.Sitemap = postsList.map(({ currentSlug }: { currentSlug: string }) => ({
-        url: `https://priyalraj.com/blog/${currentSlug}`,
+        url: `https://priyalraj.com/article/${currentSlug}`,
         lastModified: new Date(),
         changeFrequency: 'weekly',
-        priority: 1,
+        priority: 0.9,
     }));
 
     return [

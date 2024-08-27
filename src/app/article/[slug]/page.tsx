@@ -82,7 +82,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
         title: title,
         description: content,
         openGraph: {
-            url: `https://priyalraj.com/blog/${slug}`,
+            url: `https://priyalraj.com/article/${slug}`,
             type: 'article',
             title: data?.title,
             description: content,

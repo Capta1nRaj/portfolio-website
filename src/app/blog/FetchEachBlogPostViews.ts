@@ -15,8 +15,8 @@ export async function FetchEachBlogPostViews(blogID: string) {
 
     } catch (error) {
 
-        console.error("Database operation failed, if possible, please raise a PR to notify me, thanks ♥.");
+        console.error("Database operation failed, in FetchEachBlogPostViews if possible, please raise a PR to notify me, thanks ♥.");
 
-        return { error: "Database operation failed, if possible, please raise a PR to notify me, thanks ♥.", status: 500 };
+        return { error: "Database operation failed, in FetchEachBlogPostViews if possible, please raise a PR to notify me, thanks ♥.", status: 500 };
     }
 }

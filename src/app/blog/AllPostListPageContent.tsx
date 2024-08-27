@@ -16,19 +16,19 @@ const maxWidthCSS = '2xl:max-w-[1440px] xl:max-w-screen-xl lg:max-w-[1155px] md:
 
 const POSTS_PER_PAGE = 6;
 
-// Type for the post views state
-type PostViews = { [key: string]: number; };
+type PostViews = { [key: string]: number };
 
-// Function to fetch post views for multiple posts
-async function fetchPostViews(posts: simpleBlogCard[]): Promise<PostViews> {
+// Fetch post views function without await
+function fetchPostViews(posts: simpleBlogCard[]): Promise<PostViews> {
     const views: PostViews = {};
-    await Promise.all(
-        posts.map(async (post) => {
-            const { postViews } = await FetchEachBlogPostViews(post.currentSlug);
-            views[post.currentSlug] = postViews;
-        })
+    const fetchPromises = posts.map(post =>
+        FetchEachBlogPostViews(post.currentSlug)
+            .then(({ postViews }) => { views[post.currentSlug] = postViews; })
+            // Default value if fetching fails
+            .catch(error => { console.error(`Error fetching views for ${post.currentSlug}:`, error); views[post.currentSlug] = 0; })
     );
-    return views;
+
+    return Promise.all(fetchPromises).then(() => views);
 }
 
 export default function AllPostListPageContent() {
@@ -43,20 +43,26 @@ export default function AllPostListPageContent() {
         const start = page * POSTS_PER_PAGE;
         const newData = await GetHomepagePost(start, POSTS_PER_PAGE);
 
-        // Fetch views for the posts
-        const newPostViews = await fetchPostViews(newData);
-
         setData((prevData) => {
             const uniqueNewData = newData.filter(
-                (newPost: simpleBlogCard) => !prevData.some((prevPost) => prevPost.currentSlug === newPost.currentSlug));
+                (newPost: simpleBlogCard) => !prevData.some((prevPost) => prevPost.currentSlug === newPost.currentSlug)
+            );
             return [...prevData, ...uniqueNewData];
         });
 
-        // Update post views state
-        setPostViews((prevViews) => ({ ...prevViews, ...newPostViews }));
+        // Fetch views after the data has been set
+        fetchPostViews(newData)
+            .then((newPostViews) => {
+                setPostViews((prevViews) => ({ ...prevViews, ...newPostViews }));
+            })
+            .catch((error) => {
+                console.error("Error updating post views:", error);
+            });
 
         setIsLoading(false);
-        if (newData.length < POSTS_PER_PAGE) { setHasMore(false); }
+        if (newData.length < POSTS_PER_PAGE) {
+            setHasMore(false);
+        }
     }, []);
 
     useEffect(() => {
@@ -67,12 +73,14 @@ export default function AllPostListPageContent() {
 
     const lastPostElementRef = useCallback(
         (node: HTMLElement | null) => {
-            if (isLoading) return;
+            if (isLoading || !hasMore) return;
 
             if (observer.current) observer.current.disconnect();
 
             observer.current = new IntersectionObserver((entries) => {
-                if (entries[0].isIntersecting && hasMore) { setCurrentPage((prevPage) => prevPage + 1); }
+                if (entries[0].isIntersecting) {
+                    setCurrentPage((prevPage) => prevPage + 1);
+                }
             });
 
             if (node) observer.current.observe(node);
@@ -94,7 +102,13 @@ export default function AllPostListPageContent() {
                     <section ref={idx === data.length - 1 ? lastPostElementRef : null} key={post.currentSlug} className="mx-auto rounded-md relative bg-[#151515] drop-shadow-[4px_4px_2px_rgba(255,255,255,0.50)] group">
                         <Link href={`/article/${post.currentSlug}`}>
                             <div className="overflow-hidden">
-                                <Image src={urlFor(post.coverImage).url()} alt={post.title} width={500} height={500} className="rounded-t-md h-[250px] object-cover w-full group-hover:scale-105 defaultTransitionCSS" />
+                                <Image
+                                    src={urlFor(post.coverImage).url()}
+                                    alt={post.title}
+                                    width={500}
+                                    height={500}
+                                    className="rounded-t-md h-[250px] object-cover w-full group-hover:scale-105 defaultTransitionCSS"
+                                />
                             </div>
 
                             <h3 className="mt-4 px-4 font-bold text-2xl text-white h-24">{post.title}</h3>
@@ -105,7 +119,7 @@ export default function AllPostListPageContent() {
 
                             <div className="mt-4 pb-4 px-4 text-sm flex items-center justify-between">
                                 <div className="left-side">
-                                    {new Date(post.publishedAt).toLocaleDateString('en-US', { month: 'short', day: '2-digit', year: 'numeric', })}
+                                    {new Date(post.publishedAt).toLocaleDateString('en-US', { month: 'short', day: '2-digit', year: 'numeric' })}
                                     <span> | </span>
                                     {post.readTimeOfTheBlog} read
                                 </div>

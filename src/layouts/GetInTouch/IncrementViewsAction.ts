@@ -22,8 +22,8 @@ export async function IncrementViewsAction(increment: boolean) {
 
     } catch (error) {
 
-        console.error("Database operation failed, if possible, please raise a PR to notify me, thanks ♥.");
+        console.error("Database operation failed, in IncrementViewsAction, if possible, please raise a PR to notify me, thanks ♥.");
 
-        return { viewsCount: 0, error: "Database operation failed, if possible, please raise a PR to notify me, thanks ♥.", status: 500 };
+        return { viewsCount: 0, error: "Database operation failed, in IncrementViewsAction, if possible, please raise a PR to notify me, thanks ♥.", status: 500 };
     }
 }
