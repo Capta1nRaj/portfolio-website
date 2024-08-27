@@ -80,6 +80,12 @@ const SkillsSection = () => {
                         imageName='Typescript'
                     />
 
+
+                    <SkillsImage
+                        imageAndAltName='zustand'
+                        imageName='Zustand'
+                    />
+
                     <SkillsImage
                         imageAndAltName='sanity'
                         imageName='Sanity CMS'

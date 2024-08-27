@@ -9,7 +9,7 @@ const MyProjects = () => {
             title: 'ShaveLinks',
             description: 'ShaveLinks is a link shortener tool for streamlined sharing. Create concise, custom links effortlessly. Track engagement seamlessly. Simplify your online presence with ShaveLinks Shortener.',
             link: 'https://shavel.ink/promotion',
-            skills: ['Next.js', 'TypeScript', 'Tailwind CSS', 'MongoDB', 'Mongoose', 'Email Armor', 'JWT'],
+            skills: ['Next.js', 'TypeScript', 'Tailwind CSS', 'MongoDB', 'Mongoose', 'Email Armor', 'JWT', 'Zustand'],
             image: '/assets/images/MyProjectsSectionImages/shavelinks.png',
             gitHubLink: '',
             imageAlt: 'shavelinks'
