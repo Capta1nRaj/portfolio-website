@@ -53,7 +53,7 @@ const MyProjects = () => {
         {
             title: 'loop card',
             description: 'Loop Card is a contact sharing project based on NFC, crafted by me and my team at Alphamint Labs. I took charge of developing the complete reminder feature, which involves a lot of intricate logic.',
-            link: 'https://www.loopcard.club',
+            link: 'https://loopcard.vercel.app',
             skills: ['Next.js', 'Tailwind CSS', 'MongoDB', 'Mongoose', 'NextAuth.js', 'Stripe'],
             image: '/assets/images/MyProjectsSectionImages/loopcard.png',
             gitHubLink: '',
