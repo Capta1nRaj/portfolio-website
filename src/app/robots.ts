@@ -1,12 +1,11 @@
-import { MetadataRoute } from 'next'
+import type { MetadataRoute } from 'next';
 
 export default function robots(): MetadataRoute.Robots {
     return {
         rules: {
-            userAgent: ["Applebot", "Bingbot", "Googlebot", "Slurp", "DuckDuckBot", "Baiduspider", "Yandex"],
-            allow: ["/"],
-            disallow: ["/api/"],
+            userAgent: '*',
+            allow: '/',
         },
-        sitemap: `https://priyalraj.com/sitemap.xml`,
-    }
+        sitemap: 'https://priyalraj.com/sitemap.xml'
+    };
 }

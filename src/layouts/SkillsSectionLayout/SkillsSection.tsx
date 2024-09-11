@@ -90,6 +90,11 @@ const SkillsSection = () => {
                         imageAndAltName='sanity'
                         imageName='Sanity CMS'
                     />
+
+                    <SkillsImage
+                        imageAndAltName='fumadocs'
+                        imageName='Fumadocs'
+                    />
                 </div>
             </div>
         </div>
