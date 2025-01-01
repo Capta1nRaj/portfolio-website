@@ -1,4 +1,5 @@
 import { client } from "@/lib/sanity";
+import BlogPostViewsModel from "@/models/BlogPostViewsModel";
 import { MetadataRoute } from "next";
 
 // Define the type for the blog data you're fetching
@@ -33,6 +34,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // Get the current date once
     const currentDate = new Date();
 
+    // Generate jobs list sitemap entries
+    const blogsPostListSitemapEntries = await generateBlogsPostListSitemapEntries();
+
     // Return the static homepage + dynamic blog posts in the sitemap
     return [
         {
@@ -47,6 +51,27 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             changeFrequency: 'weekly',
             priority: 1.0,
         },
-        ...postEntries
+        ...postEntries,
+        ...blogsPostListSitemapEntries
     ];
+}
+
+async function generateBlogsPostListSitemapEntries(): Promise<MetadataRoute.Sitemap> {
+    try {
+        const blogsPostListCount = await BlogPostViewsModel.countDocuments();
+
+        // Return empty array if no jobs exist
+        if (blogsPostListCount === 0) return [];
+
+        const totalSitemaps = Math.ceil(blogsPostListCount / 50000);
+        return Array.from({ length: totalSitemaps }, (_, index) => ({
+            url: `${process.env.NEXT_PUBLIC_DOMAIN_NAME_1}/article/sitemap/${index}.xml`,
+            lastModified: new Date(),
+            changeFrequency: 'weekly',
+            priority: 0.9,
+        }));
+    } catch (error) {
+        console.error("Error generating jobs sitemap entries:", error);
+        return []; // Return empty array in case of an error
+    }
 }
