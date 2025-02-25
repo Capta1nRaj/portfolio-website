@@ -2,6 +2,9 @@ import BlogPostViewsModel from '@/models/BlogPostViewsModel';
 import { connect2MongoDB } from 'connect2mongodb';
 import type { MetadataRoute } from 'next';
 
+// Revalidate every 1 week (604800 seconds)
+export const revalidate = 604800;
+
 export async function generateSitemaps(): Promise<{ id: number }[]> {
     try {
         await connect2MongoDB();
@@ -31,17 +34,17 @@ export default async function sitemap({ id }: { id: number }): Promise<MetadataR
         // Fetch job posts
         const blogData = await BlogPostViewsModel
             .find({})
-            .select('_id blogID updatedAt')
+            .select('_id blogID createdAt')
             .skip(start)
             .limit(limit)
             .lean(); // Use lean for better performance
 
         // Validate and map job post data
         const list: MetadataRoute.Sitemap = blogData
-            .filter(blog => blog && blog.updatedAt) // Ensure `updatedAt` exists
+            .filter(blog => blog && blog.createdAt) // Ensure `createdAt` exists
             .map(blog => ({
                 url: `${process.env.NEXT_PUBLIC_DOMAIN_NAME_1}/article/${blog.blogID}`,
-                lastModified: blog.updatedAt,
+                lastModified: blog.createdAt,
                 changeFrequency: 'weekly',
                 priority: 0.9,
             }));
