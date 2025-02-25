@@ -24,15 +24,6 @@ const MyProjects = () => {
             imageAlt: 'blyt'
         },
         {
-            title: 'e-comm admin panel',
-            description: 'A seamless E-Comm admin panel crafted with Next.js. In this project, I implemented custom authentication using bcrypt.js, along with an inbuilt API for effortless user and product management, and more.',
-            link: '',
-            skills: ['Next.js', 'TypeScript', 'Tailwind CSS', 'MongoDB', 'Mongoose', 'Chart.js', 'Email Armor'],
-            image: '/assets/images/MyProjectsSectionImages/ecomm-admin-panel.png',
-            gitHubLink: '',
-            imageAlt: 'ecomm-admin-panel'
-        },
-        {
             title: 'email armor',
             description: 'Custom email and password authentication with two-step verification via SendGrid.',
             link: 'https://www.npmjs.com/package/email-armor',
@@ -40,15 +31,6 @@ const MyProjects = () => {
             image: '/assets/images/MyProjectsSectionImages/email-armor.png',
             gitHubLink: 'https://github.com/Capta1nRaj/email-armor',
             imageAlt: 'email-armor'
-        },
-        {
-            title: 'Connect2MongoDB',
-            description: 'My first ever npm module is a lightweight and easy-to-use library that allows you to connect to MongoDB with both dynamic and fixed databases.',
-            link: 'https://www.npmjs.com/package/connect2mongodb',
-            skills: ['TypeScript', 'Express.js', 'MongoDB', 'Mongoose'],
-            image: '/assets/images/MyProjectsSectionImages/connect2mongodb.png',
-            gitHubLink: 'https://github.com/Capta1nRaj/connect2mongodb',
-            imageAlt: 'connect2mongodb'
         },
         {
             title: 'loop card',

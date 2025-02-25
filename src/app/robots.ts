@@ -4,8 +4,7 @@ export default function robots(): MetadataRoute.Robots {
     return {
         rules: {
             userAgent: '*',
-            allow: '/',
-            disallow: '/portfolio'
+            allow: '/'
         },
         sitemap: 'https://priyalraj.com/sitemap.xml'
     };

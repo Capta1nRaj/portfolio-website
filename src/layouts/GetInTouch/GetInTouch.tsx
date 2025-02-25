@@ -1,6 +1,6 @@
 'use client'
 
-import { FormatNumber } from '@/app/utils/FormatNumber';
+import { FormatNumber } from '@/utils/FormatNumber';
 import Headings from '@/components/Headings';
 import LoadingGIF from '@/images/CommonImages/LoadingGIF';
 import Image from 'next/image'
