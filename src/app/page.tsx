@@ -9,7 +9,7 @@ import { redirect } from "next/navigation";
 
 export default function Home() {
 
-  if (!process.env.NEXT_DEVELOPMENT_MODE) { redirect("/portfolio"); }
+  if (process.env.NEXT_DEVELOPMENT_MODE === "true") { redirect("/portfolio"); }
 
   return (
     <>

@@ -1,6 +1,7 @@
 import React from 'react'
 
-const Logo2 = () => {
+const Logo2 = 
+() => {
     return (
         <div>Logo2</div>
     )
