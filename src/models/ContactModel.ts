@@ -7,6 +7,13 @@ const ContactModel = new mongoose.Schema({
     companyName: { type: String, required: false },
     email: { type: String, required: true },
     message: { type: String, required: false },
+
+    country: { type: String, required: false, default: "" },
+    regionName: { type: String, required: false, default: "" },
+    city: { type: String, required: false, default: "" },
+    zip: { type: String, required: false, default: "" },
+    timezone: { type: String, required: false, default: "" },
+
     status: { type: String, required: true, enum: InquiryDetailsLisStatusOptions, default: "new" }
 }, { timestamps: true });
 
