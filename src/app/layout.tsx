@@ -2,6 +2,7 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { GoogleAnalytics } from '@next/third-parties/google'
+import { Toaster } from "sonner";
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -57,6 +58,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <Toaster position="top-right" expand={true} richColors duration={4000} />
         {children}
         <GoogleAnalytics gaId={`${process.env.GOOGLE_ANALYTICS_MEASUREMENT_ID}`} />
       </body>

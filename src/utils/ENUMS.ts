@@ -1,0 +1,1 @@
+export const InquiryDetailsLisStatusOptions = ['new', 'in progress', 'reviewed', 'closed'];

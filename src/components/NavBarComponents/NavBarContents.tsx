@@ -9,7 +9,7 @@ export default function NavBarContents() {
                 <div className={`${navBarRightSideCSS}`}> blog </div>
             </Link>
 
-            <Link href="/#contact">
+            <Link href="/contact">
                 <div className={`${navBarRightSideCSS}`}> contact </div>
             </Link>
         </>

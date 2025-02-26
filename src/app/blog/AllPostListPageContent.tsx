@@ -1,7 +1,6 @@
 'use client';
 
 import FooterLayout from '@/layouts/FooterLayout/FooterLayout';
-import GetInTouch from '@/layouts/GetInTouch/GetInTouch';
 import NavBar from '@/layouts/NavBarLayout/NavBar';
 import { simpleBlogCard } from '@/lib/interface';
 import { urlFor } from '@/lib/sanity';
@@ -143,8 +142,6 @@ export default function AllPostListPageContent() {
                     <p>That&#39;s all for now, more coming soon!</p>
                 </div>
             )}
-
-            <GetInTouch />
 
             <FooterLayout />
         </>

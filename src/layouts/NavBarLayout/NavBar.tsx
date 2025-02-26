@@ -8,10 +8,10 @@ const NavBar = () => {
 
     return (
         <>
-            <div className='bg-lightblack text-white drop-shadow-[0px_3px_5px_#000000]'>
+            <nav className='bg-lightblack text-white drop-shadow-[0px_3px_5px_#000000]'>
                 {/* For Desktop & Tablet */}
                 <div className="block nav-bar-layout" id="/">
-                    <div className="max-width flex justify-between items-center max-w-screen-xl m-auto px-4 py-2">
+                    <div className="max-width flex justify-between items-center max-w-screen-xl m-auto px-4 py-4">
 
                         <div className="nav-bar-left-side cursor-pointer">
                             <Logo1 />
@@ -22,7 +22,7 @@ const NavBar = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </nav>
 
             <div className='lg:hidden block bg-lightblack text-white'>
                 {/* For Mobile */}

@@ -5,7 +5,6 @@ import Image from "next/image";
 import { redirect } from "next/navigation";
 import CustomCode from "./CustomCode";
 import FooterLayout from "@/layouts/FooterLayout/FooterLayout";
-import GetInTouch from "@/layouts/GetInTouch/GetInTouch";
 import NavBar from "@/layouts/NavBarLayout/NavBar";
 import { IncrementArticleViewsAction } from "./IncrementArticleViewsAction";
 
@@ -137,8 +136,6 @@ export default async function BlogPage({ params }: { params: { slug: string } })
                 <Image className="mt-4 mb-4 drop-shadow rounded-md object-cover w-full" src={urlFor(data.coverImage).url()} alt={data.title} width={500} height={500} priority />
                 <PortableText value={data.content} components={components} />
             </section>
-
-            <GetInTouch />
 
             <FooterLayout />
         </>

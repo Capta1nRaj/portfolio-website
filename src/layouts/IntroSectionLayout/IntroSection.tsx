@@ -43,7 +43,7 @@ const IntroSection = () => {
                                 <Image width={50} height={50} src="https://img.icons8.com/?size=50&id=13930&format=png&color=000000" alt="" />
                             </Link>
 
-                            <Link href={'https://twitter.com/capta1n_raj'} target='_blank'>
+                            <Link href={'https://twitter.com/Capta1nCodes'} target='_blank'>
                                 <Image className='invert' width={50} height={50} src="https://img.icons8.com/?size=50&id=phOKFKYpe00C&format=png&color=000000" alt="" />
                             </Link>
 

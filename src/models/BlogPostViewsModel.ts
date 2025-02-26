@@ -3,9 +3,7 @@ import mongoose from "mongoose";
 const BlogPostViewsSchema = new mongoose.Schema({
     blogID: { type: String, required: true },
     views: { type: Number, default: 0 }
-}, {
-    timestamps: true
-});
+}, { timestamps: true });
 
 BlogPostViewsSchema.index({ blogID: 1 });
 
