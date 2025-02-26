@@ -1,5 +1,5 @@
+import Headings from '@/components/Headings'
 import ProjectListBox from '@/components/MyProjectsComponents/ProjectListBox'
-import Headings from '../../components/Headings'
 import React from 'react'
 
 const MyProjects = () => {

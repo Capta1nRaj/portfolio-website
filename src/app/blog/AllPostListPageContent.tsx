@@ -1,7 +1,7 @@
 'use client';
 
-import FooterLayout from '@/layouts/FooterLayout/FooterLayout';
-import NavBar from '@/layouts/NavBarLayout/NavBar';
+import FooterLayout from '@/layouts/FooterLayout';
+import NavBar from '@/layouts/NavBar';
 import { simpleBlogCard } from '@/lib/interface';
 import { urlFor } from '@/lib/sanity';
 import { GetHomepagePost } from '@/server/GetHomepagePost';

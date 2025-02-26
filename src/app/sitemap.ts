@@ -1,4 +1,5 @@
 import BlogPostViewsModel from "@/models/BlogPostViewsModel";
+import { connect2MongoDB } from "connect2mongodb";
 import { MetadataRoute } from "next";
 
 // Revalidate every 1 week (604800 seconds)
@@ -37,6 +38,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
 async function generateBlogsPostListSitemapEntries(): Promise<MetadataRoute.Sitemap> {
     try {
+        await connect2MongoDB();
         const blogsPostListCount = await BlogPostViewsModel.countDocuments();
 
         // Return empty array if no jobs exist

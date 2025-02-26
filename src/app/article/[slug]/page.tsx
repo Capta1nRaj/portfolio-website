@@ -4,8 +4,8 @@ import { PortableText } from "next-sanity";
 import Image from "next/image";
 import { redirect } from "next/navigation";
 import CustomCode from "./CustomCode";
-import FooterLayout from "@/layouts/FooterLayout/FooterLayout";
-import NavBar from "@/layouts/NavBarLayout/NavBar";
+import FooterLayout from "@/layouts/FooterLayout";
+import NavBar from "@/layouts/NavBar";
 import { IncrementArticleViewsAction } from "./IncrementArticleViewsAction";
 
 export const revalidate = 86400000;

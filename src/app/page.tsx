@@ -1,9 +1,10 @@
-import AboutMe from "@/layouts/AboutMeLayout/AboutMe";
-import FooterLayout from "@/layouts/FooterLayout/FooterLayout";
-import IntroSection from "@/layouts/IntroSectionLayout/IntroSection";
-import MyProjects from "@/layouts/MyProjectsLayout/MyProjects";
-import NavBar from "@/layouts/NavBarLayout/NavBar";
-import SkillsSection from "@/layouts/SkillsSectionLayout/SkillsSection";
+import AboutMe from "@/layouts/AboutMe";
+import FooterLayout from "@/layouts/FooterLayout";
+import IntroSection from "@/layouts/IntroSection";
+import MyProjects from "@/layouts/MyProjects";
+import NavBar from "@/layouts/NavBar";
+import SkillsSection from "@/layouts/SkillsSection";
+import TestimonialSection from "@/layouts/TestimonialsLayout";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <IntroSection />
       <AboutMe />
       <SkillsSection />
+      <TestimonialSection />
       <MyProjects />
       <FooterLayout />
     </>

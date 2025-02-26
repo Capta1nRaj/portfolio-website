@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
-import LocationIcon from '../../images/IntroSectionIcons/LocationIcon'
+import LocationIcon from '../images/IntroSectionIcons/LocationIcon'
 import Link from 'next/link'
 
 const buttonProperties = `px-4 py-2 uppercase border border-reddish text-xl transition-all duration-500 ease-in-out hover:bg-reddish font-medium hover:drop-shadow-[2px_2px_4px_#ffffff]`

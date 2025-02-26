@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
-import { IncrementViewsAction } from '../GetInTouch/IncrementViewsAction'
+import { IncrementViewsAction } from '../actions/IncrementViewsAction'
 
 const FooterLayout = () => {
 

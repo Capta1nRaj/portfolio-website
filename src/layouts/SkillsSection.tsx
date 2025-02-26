@@ -1,6 +1,6 @@
-import Headings from '../../../src/components/Headings'
+import Headings from '../components/Headings'
 import React from 'react'
-import SkillsImage from '../../../src/components/IntroSectionComponents/SkillsImage'
+import SkillsImage from '../components/IntroSectionComponents/SkillsImage'
 
 const SkillsSection = () => {
     return (

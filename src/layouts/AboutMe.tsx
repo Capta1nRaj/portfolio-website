@@ -1,5 +1,5 @@
 import React from 'react'
-import Headings from '../../components/Headings'
+import Headings from '../components/Headings'
 import Image from 'next/image'
 import Link from 'next/link'
 

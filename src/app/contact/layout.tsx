@@ -1,5 +1,5 @@
-import FooterLayout from "@/layouts/FooterLayout/FooterLayout";
-import NavBar from "@/layouts/NavBarLayout/NavBar";
+import FooterLayout from "@/layouts/FooterLayout";
+import NavBar from "@/layouts/NavBar";
 import { Metadata } from "next";
 import React from "react";
 
