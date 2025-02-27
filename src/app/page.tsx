@@ -1,4 +1,3 @@
-import AboutMe from "@/layouts/AboutMe";
 import FooterLayout from "@/layouts/FooterLayout";
 import IntroSection from "@/layouts/IntroSection";
 import MyProjects from "@/layouts/MyProjects";
@@ -11,9 +10,8 @@ export default function Home() {
     <>
       <NavBar />
       <IntroSection />
-      <AboutMe />
+      {/* <TestimonialSection /> */}
       <SkillsSection />
-      <TestimonialSection />
       <MyProjects />
       <FooterLayout />
     </>

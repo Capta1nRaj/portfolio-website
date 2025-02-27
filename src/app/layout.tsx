@@ -1,10 +1,8 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import { GoogleAnalytics } from '@next/third-parties/google'
 import { Toaster } from "sonner";
-
-const inter = Inter({ subsets: ['latin'] })
+import { MontserratFont } from '@/utils/Fonts';
 
 export const metadata: Metadata = {
   metadataBase: new URL(`https://priyalraj.com`),
@@ -50,14 +48,10 @@ export const metadata: Metadata = {
   manifest: '/favicon/manifest.json',
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children, }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={MontserratFont.className}>
         <Toaster position="top-right" expand={true} richColors duration={4000} />
         {children}
         <GoogleAnalytics gaId={`${process.env.GOOGLE_ANALYTICS_MEASUREMENT_ID}`} />

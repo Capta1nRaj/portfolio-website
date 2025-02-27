@@ -40,7 +40,7 @@ const FooterLayout = () => {
     return (
         <section className='flex justify-center bg-[#111111] text-white py-1'>
             <div className='py-2 underline'>
-                Made with ❤️ by Priyal Raj.
+                Made with ❤️ by Priyal Raj
             </div>
         </section>
     )
