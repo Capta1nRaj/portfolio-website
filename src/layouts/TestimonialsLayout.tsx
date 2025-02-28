@@ -60,7 +60,9 @@ const testimonials: Testimonial[] = [
         clientUrl: "https://www.linkedin.com/in/parth-panjwani",
         projects: [{ name: "Pet Welfare App", url: "https://pet-guard.vercel.app" }],
     },
-]; const getSocialIconFromUrl = (url?: string) => {
+];
+
+const getSocialIconFromUrl = (url?: string) => {
     if (!url) { return (<Image width={24} height={24} src="https://img.icons8.com/fluency/48/000000/share.png" alt="Social Media" className="h-6 w-6 scale-100 hover:scale-150 transition-transform duration-300" />); }
     if (url.includes("linkedin")) { return (<Image width={24} height={24} src="https://img.icons8.com/fluency/48/000000/linkedin.png" alt="LinkedIn" className="h-6 w-6 scale-100 hover:scale-150 transition-transform duration-300" />); }
     if (url.includes("twitter")) { return (<Image width={24} height={24} src="https://img.icons8.com/fluency/48/000000/twitter.png" alt="Twitter" className="h-6 w-6 scale-100 hover:scale-150 transition-transform duration-300" />); }

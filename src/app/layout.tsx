@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description: "My name is Priyal Raj, I am a Full Stack Web Dev. Welcome To My Portfolio Website.",
   keywords: "full-stack web developer, web development portfolio, priyal raj portfolio, responsive web design, front-end development, back-end development, javascript developer, html5/css3, ui/ux design, web application developer, node.js developer, react.js development, mongodb, express.js, restful apis, mobile-first design, cross-browser compatibility, git version control, portfolio projects, code samples",
   twitter: { card: "summary_large_image" },
-  openGraph: { images: 'https://drive.google.com/thumbnail?id=1C09M0Xufl5UlOjMBegB-ffmUuX3Ph8Kp', },
+  openGraph: { images: 'https://shave-links-production.s3.ap-south-1.amazonaws.com/root-images/PriyalRajOpenGraphImage.png', },
   alternates: { canonical: './', },
   icons: {
     icon: [
