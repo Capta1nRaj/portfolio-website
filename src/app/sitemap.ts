@@ -5,12 +5,6 @@ import { MetadataRoute } from "next";
 // Revalidate every 1 week (604800 seconds)
 export const revalidate = 604800;
 
-// Define the type for the blog data you're fetching
-interface BlogPost {
-    currentSlug: string;
-    publishedAt: string;
-}
-
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // Get the current date once
     const currentDate = new Date();
@@ -31,6 +25,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             lastModified: currentDate,
             changeFrequency: 'weekly',
             priority: 1.0,
+        },
+        {
+            url: `https://priyalraj.com/testimonials`,
+            lastModified: currentDate,
+            changeFrequency: 'weekly',
+            priority: 0.9,
         },
         ...blogsPostListSitemapEntries
     ];

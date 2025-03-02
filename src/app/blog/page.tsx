@@ -1,6 +1,8 @@
 import React, { Suspense } from 'react';
 import { Metadata } from 'next';
 import AllPostListPageContent from './AllPostListPageContent';
+import FooterLayout from '@/layouts/FooterLayout';
+import NavBar from '@/layouts/NavBar';
 
 export const metadata: Metadata = {
     title: "Explore Coding, Extensions, and More: Your Go-To Blog",
@@ -11,10 +13,14 @@ export const metadata: Metadata = {
     alternates: { canonical: '/blog', }
 };
 
-const SignInPage = () => (
-    <Suspense>
-        <AllPostListPageContent />
-    </Suspense>
-);
-
-export default SignInPage;
+export default function BlogPage() {
+    return (
+        <>
+            <NavBar />
+            <Suspense>
+                <AllPostListPageContent />
+            </Suspense>
+            <FooterLayout />
+        </>
+    )
+};

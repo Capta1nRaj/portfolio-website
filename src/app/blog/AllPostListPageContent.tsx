@@ -1,7 +1,5 @@
 "use client";
 
-import FooterLayout from "@/layouts/FooterLayout";
-import NavBar from "@/layouts/NavBar";
 import { simpleBlogCard } from "@/lib/interface";
 import { urlFor } from "@/lib/sanity";
 import { GetHomepagePost } from "@/server/GetHomepagePost";
@@ -12,8 +10,7 @@ import { useRef, useCallback, useEffect, useState } from "react";
 import { FetchEachBlogPostViews } from "./FetchEachBlogPostViews";
 
 // Responsive container widths
-const maxWidthCSS =
-    "2xl:max-w-[1440px] xl:max-w-screen-xl lg:max-w-[1155px] md:max-w-4xl max-w-2xl";
+const maxWidthCSS = "2xl:max-w-[1440px] xl:max-w-screen-xl lg:max-w-[1155px] md:max-w-4xl max-w-2xl";
 
 // Number of posts to load per page
 const POSTS_PER_PAGE = 6;
@@ -84,8 +81,6 @@ export default function AllPostListPageContent() {
 
     return (
         <>
-            <NavBar />
-
             {/* Page Heading */}
             <div className={`text-white text-center mt-10 ${maxWidthCSS} mx-auto px-4`}>
                 <h1 className="text-4xl font-bold">Priyal Raj&apos;s Code &amp; Curiosities</h1>
@@ -148,8 +143,6 @@ export default function AllPostListPageContent() {
                     <p>That&apos;s all for now, more coming soon!</p>
                 </div>
             )}
-
-            <FooterLayout />
         </>
     );
 }

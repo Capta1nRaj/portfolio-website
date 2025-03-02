@@ -1,17 +1,12 @@
-'use client'
-
 import Image from 'next/image'
 import React from 'react'
-import { useRouter } from 'next/navigation'
+import Link from 'next/link'
 
 const Logo1 = () => {
-
-    const router = useRouter()
-
     return (
-        <>
-            <Image className='w-auto h-auto' onClick={() => router.push('/')} width={30} height={30} src="/assets/images/Logo/logo-1.png" alt="priyal raj logo 1" />
-        </>
+        <Link href={'/'}>
+            <Image className='w-auto h-auto' width={30} height={30} src="/assets/images/Logo/logo-1.png" alt="priyal raj logo 1" />
+        </Link>
     )
 }
 

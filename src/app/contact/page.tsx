@@ -10,8 +10,6 @@ import ContactAction from "./ContactAction";
 
 // Thank You Modal Component
 function ThankYouModal() {
-    const router = useRouter();
-
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm mx-4">
             <div className="relative bg-[#111111] rounded-lg p-4 max-w-lg w-full text-center shadow-lg border-2">
@@ -40,8 +38,6 @@ export default function ContactMeDarkMerged() {
 
     const [isLoading, setIsLoading] = useState(false);
     const [showThankYou, setShowThankYou] = useState(false);
-
-    const router = useRouter();
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));

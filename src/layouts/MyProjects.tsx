@@ -1,11 +1,12 @@
 'use client'
 
-import Headings from '@/components/Headings'
-import Image from 'next/image'
-import Link from 'next/link'
-import React, { useState } from 'react'
-import { FaSearch, FaBriefcase, FaUser } from 'react-icons/fa'
+import React, { useState } from 'react';
+import Headings from '@/components/Headings';
+import Image from 'next/image';
+import Link from 'next/link';
+import { FaSearch, FaBriefcase, FaUser } from 'react-icons/fa';
 
+// Projects list
 const projectData = [
     {
         title: 'ShaveLinks',
@@ -78,55 +79,57 @@ const projectData = [
     }
 ];
 
+// Define your custom order by project title (or unique identifier)
+const customOrder = [
+    'Modaro Health',
+    'Bravas Digital',
+    'Consulting Website',
+    'ShaveLinks',
+    'Email Armor Docs',
+    'BLYT',
+    'Loop Card',
+];
+
 export default function MyProjects() {
+    // State to toggle the projects filter
     const [filter, setFilter] = useState('all');
 
-    const filteredProjects = projectData.filter(project => {
-        if (filter === 'all') return true;
-        return project.category === filter;
-    });
+    // Filter projects as per type
+    const filteredProjects = projectData.filter(project => { if (filter === 'all') return true; return project.category === filter; });
+
+    // Sort projects based on their index in customOrder
+    const sortedProjects = [...filteredProjects].sort((a, b) => { return customOrder.indexOf(a.title) - customOrder.indexOf(b.title); });
 
     return (
         <section id="projects" className="bg-black text-white py-12 px-4 md:px-8 lg:px-16 xl:px-24">
             <div className="max-w-screen-xl mx-auto">
                 <Headings title="projects" subHeading="Global Standards in Project Excellence" />
 
-                {/* Filter Buttozns */}
-
+                {/* Filter Buttons */}
                 <div className="flex justify-center space-x-4 mt-8">
                     {[
                         { id: 'all', label: 'All', icon: <FaSearch /> },
                         { id: 'client', label: 'Client Projects', icon: <FaBriefcase /> },
                         { id: 'personal', label: 'Personal Projects', icon: <FaUser /> }
                     ].map((btn) => (
-                        <button key={btn.id} onClick={() => setFilter(btn.id)} className={`flex items-center gap-2 px-4 py-2 rounded-full defaultTransitionCSS font-medium border-2
-                            ${filter === btn.id ? 'bg-reddish text-black shadow-[0_0_10px_2px_rgba(255,0,0,0.6)] border-reddish' : 'bg-black border-white text-white hover:bg-gray-900'}
-                            ${filter === btn.id && btn.id !== "all" ? 'animate-bounce' : 'animate-none'}`}>
+                        <button
+                            key={btn.id}
+                            onClick={() => setFilter(btn.id)}
+                            className={`flex items-center gap-2 px-4 py-2 rounded-full defaultTransitionCSS font-medium border-2
+                            ${filter === btn.id ? 'bg-reddish text-black shadow-[0_0_10px_2px_rgba(255,0,0,0.6)] border-reddish' : 'bg-black border-white text-white hover:bg-gray-900'}`}>
                             <span>{btn.icon}</span>
                             <span>{btn.label}</span>
                         </button>
-
                     ))}
                 </div>
 
-
                 {/* Project Cards */}
                 <div className="mt-10 grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-4">
-                    {filteredProjects.map((project, idx) => (
-                        <div
-                            key={idx}
-                            className="bg-[#111111] border-2 border-white rounded-xl overflow-hidden shadow-lg defaultTransitionCSS hover:scale-105 hover:border-reddish flex flex-col"
-                        >
+                    {sortedProjects.map((project, idx) => (
+                        <div key={idx} className="bg-[#111111] border-2 border-white rounded-xl overflow-hidden shadow-lg defaultTransitionCSS hover:scale-105 hover:border-reddish flex flex-col">
                             {/* Project Image */}
                             <div className="relative h-[200px] w-full">
-                                <Image
-                                    src={project.image}
-                                    alt={project.imageAlt || project.title}
-                                    width={600}
-                                    height={200}
-                                    quality={100}
-                                    className={`defaultTransitionCSS h-[200px] object-cover ${project.title === "Email Armor Docs" ? "" : "object-top"}`}
-                                />
+                                <Image src={project.image} alt={project.imageAlt || project.title} width={600} height={200} quality={100} className={`defaultTransitionCSS h-[200px] object-cover ${project.title === "Email Armor Docs" ? "" : "object-top"}`} />
                             </div>
                             {/* Project Content */}
                             <div className="p-4 flex flex-col flex-grow">
@@ -137,37 +140,15 @@ export default function MyProjects() {
                                 <div className="mt-4">
                                     <div className="flex gap-4">
                                         {project.link && (
-                                            <Link
-                                                href={project.link}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="group bg-black border border-white px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1 transition-colors duration-300 hover:bg-white hover:text-black"
-                                            >
+                                            <Link href={project.link} target="_blank" rel="noopener noreferrer" className="group bg-black border border-white px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1 transition-colors duration-300 hover:bg-white hover:text-black">
                                                 <span>Visit Site</span>
-                                                <Image
-                                                    width={12}
-                                                    height={12}
-                                                    src="/assets/images/MyProjectsSectionImages/pop-up-icon.png"
-                                                    alt="pop-up-icon"
-                                                    className="group-hover:rotate-45 group-hover:invert-0 invert defaultTransitionCSS"
-                                                />
+                                                <Image width={12} height={12} src="/assets/images/MyProjectsSectionImages/pop-up-icon.png" alt="pop-up-icon" className="group-hover:rotate-45 group-hover:invert-0 invert defaultTransitionCSS" />
                                             </Link>
                                         )}
                                         {project.gitHubLink && (
-                                            <Link
-                                                href={project.gitHubLink}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="group bg-black border border-white px-3 py-1 rounded-full text-xs font-bold hover:bg-white hover:text-black defaultTransitionCSS flex items-center gap-1"
-                                            >
+                                            <Link href={project.gitHubLink} target="_blank" rel="noopener noreferrer" className="group bg-black border border-white px-3 py-1 rounded-full text-xs font-bold hover:bg-white hover:text-black defaultTransitionCSS flex items-center gap-1">
                                                 <span>Open Source</span>
-                                                <Image
-                                                    width={14}
-                                                    height={14}
-                                                    src="https://img.icons8.com/fluency/48/000000/github.png"
-                                                    alt="GitHub"
-                                                    className="group-hover:invert-0 invert defaultTransitionCSS"
-                                                />
+                                                <Image width={14} height={14} src="https://img.icons8.com/fluency/48/000000/github.png" alt="GitHub" className="group-hover:invert-0 invert defaultTransitionCSS" />
                                             </Link>
                                         )}
                                     </div>
