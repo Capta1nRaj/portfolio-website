@@ -7,6 +7,7 @@ import { GetSocialIconFromUrl } from "@/utils/GetSocialIconFromUrl";
 import { Metadata } from "next";
 import NavBar from "@/layouts/NavBar";
 import FooterLayout from "@/layouts/FooterLayout";
+import ContactUsLayout from "@/layouts/ContactUsLayout";
 
 export const metadata: Metadata = {
     title: "Testimonials - Hear from Our Clients",
@@ -93,6 +94,8 @@ export default function TestimonialsPage() {
                     </div>
                 </div>
             </section>
+
+            <ContactUsLayout />
             <FooterLayout />
         </>
     );

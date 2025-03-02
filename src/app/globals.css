@@ -4,7 +4,7 @@
 
 @layer base{
   .defaultTransitionCSS {
-    @apply transition-all ease-in-out duration-500;
+    @apply transition-all ease-in-out duration-300;
   }
 }
 

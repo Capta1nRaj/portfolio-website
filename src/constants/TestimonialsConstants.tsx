@@ -24,15 +24,6 @@ export const TestimonialsConstants: TestimonialType[] = [
         projects: [{ name: "Modaro Health", url: "https://modarohealth.com" }],
     },
     {
-        body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
-        author: "Siddharth Nair",
-        company: "Bravas Digital",
-        position: "CEO",
-        imageUrl: "/images/TestimonialsImagefs/SiddharthNair1.jpeg",
-        clientUrl: "https://www.linkedin.com/in/siddharth-nair-b30a3413b/",
-        projects: [{ name: "Bravas Digital", url: "https://www.bravasdigital.com" }],
-    },
-    {
         body: "Raj was a great help at setting up my Wiki-IMDB pages. He’s incredibly responsive and professional. Highly recommend his services for anything relating to website and profile design. ",
         author: "Tanishq Kaura",
         company: "Boys Played Well",
@@ -44,6 +35,15 @@ export const TestimonialsConstants: TestimonialType[] = [
             { name: "IMDb page", url: "https://www.imdb.com/name/nm7858569" }
         ],
     },
+    // {
+    //     body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
+    //     author: "Siddharth Nair",
+    //     company: "Bravas Digital",
+    //     position: "CEO",
+    //     imageUrl: "/images/TestimonialsImagefs/SiddharthNair1.jpeg",
+    //     clientUrl: "https://www.linkedin.com/in/siddharth-nair-b30a3413b/",
+    //     projects: [{ name: "Bravas Digital", url: "https://www.bravasdigital.com" }],
+    // },
     {
         body: "The project was completed in the given time with proper and friendly support.",
         author: "Parth Panjwani",
