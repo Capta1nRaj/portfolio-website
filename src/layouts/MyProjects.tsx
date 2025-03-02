@@ -1,7 +1,10 @@
+'use client'
+
 import Headings from '@/components/Headings'
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
+import React, { useState } from 'react'
+import { FaSearch, FaBriefcase, FaUser } from 'react-icons/fa'
 
 const projectData = [
     {
@@ -12,6 +15,7 @@ const projectData = [
         gitHubLink: '',
         image: '/assets/images/MyProjectsSectionImages/shavelinks.png',
         imageAlt: 'ShaveLinks Project',
+        category: 'personal'
     },
     {
         title: 'Modaro Health',
@@ -21,6 +25,7 @@ const projectData = [
         gitHubLink: '',
         image: '/assets/images/MyProjectsSectionImages/modarohealth.png',
         imageAlt: 'Modaro Health Project',
+        category: 'client'
     },
     {
         title: 'Bravas Digital',
@@ -30,6 +35,7 @@ const projectData = [
         gitHubLink: '',
         image: '/assets/images/MyProjectsSectionImages/bravasdigital.png',
         imageAlt: 'Bravas Digital Project',
+        category: 'client'
     },
     {
         title: 'BLYT',
@@ -39,6 +45,7 @@ const projectData = [
         gitHubLink: '',
         image: '/assets/images/MyProjectsSectionImages/blyt.png',
         imageAlt: 'BLYT Project',
+        category: 'client'
     },
     {
         title: 'Loop Card',
@@ -48,6 +55,7 @@ const projectData = [
         gitHubLink: '',
         image: '/assets/images/MyProjectsSectionImages/loopcard.png',
         imageAlt: 'Loop Card Project',
+        category: 'client'
     },
     {
         title: 'Email Armor Docs',
@@ -57,16 +65,54 @@ const projectData = [
         gitHubLink: 'https://github.com/Capta1nRaj/email-armor',
         image: '/assets/images/MyProjectsSectionImages/email-armor.png',
         imageAlt: 'Email Armor Docs',
+        category: 'personal'
     },
+    {
+        title: 'Consulting Website',
+        description: 'A modern, professional platform designed for consulting firms, featuring a clean, responsive layout, intuitive navigation, and engaging visuals that effectively showcase services and success stories to attract potential clients.',
+        link: 'https://consulting-website-nine.vercel.app',
+        gitHubLink: '',
+        image: '/assets/images/MyProjectsSectionImages/consultingWebsite.png',
+        imageAlt: 'Consulting Website',
+        category: 'personal'
+    }
 ];
 
 export default function MyProjects() {
+    const [filter, setFilter] = useState('all');
+
+    const filteredProjects = projectData.filter(project => {
+        if (filter === 'all') return true;
+        return project.category === filter;
+    });
+
     return (
         <section id="projects" className="bg-black text-white py-12 px-4 md:px-8 lg:px-16 xl:px-24">
             <div className="max-w-screen-xl mx-auto">
                 <Headings title="projects" subHeading="Global Standards in Project Excellence" />
+
+                {/* Filter Buttozns */}
+
+                <div className="flex justify-center space-x-4 mt-8">
+                    {[
+                        { id: 'all', label: 'All', icon: <FaSearch /> },
+                        { id: 'client', label: 'Client Projects', icon: <FaBriefcase /> },
+                        { id: 'personal', label: 'Personal Projects', icon: <FaUser /> }
+                    ].map((btn) => (
+                        <button key={btn.id} onClick={() => setFilter(btn.id)} className={`flex items-center gap-2 px-4 py-2 rounded-full defaultTransitionCSS font-medium border-2
+                            ${filter === btn.id ? 'bg-reddish text-black shadow-[0_0_10px_2px_rgba(255,0,0,0.6)] border-reddish' : 'bg-black border-white text-white hover:bg-gray-900'}
+                            ${filter === btn.id && btn.id !== "all" ? 'animate-bounce' : 'animate-none'}`}>
+                            <span>{btn.icon}</span>
+                            <span>{btn.label}</span>
+                        </button>
+
+                    ))}
+                </div>
+
+
+                {/* Project Cards */}
                 <div className="mt-10 grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-4">
-                    {projectData.map((project, idx) => (
+                    {filteredProjects.map((project, idx) => (
                         <div
                             key={idx}
                             className="bg-[#111111] border-2 border-white rounded-xl overflow-hidden shadow-lg defaultTransitionCSS hover:scale-105 hover:border-reddish flex flex-col"
@@ -79,8 +125,6 @@ export default function MyProjects() {
                                     width={600}
                                     height={200}
                                     quality={100}
-                                    objectFit="cover"
-                                    objectPosition="top"
                                     className={`defaultTransitionCSS h-[200px] object-cover ${project.title === "Email Armor Docs" ? "" : "object-top"}`}
                                 />
                             </div>

@@ -42,8 +42,8 @@ const testimonials: Testimonial[] = [
     {
         body: "Raj was a great help at setting up my Wiki-IMDB pages. He’s incredibly responsive and professional. Highly recommend his services for anything relating to website and profile design. ",
         author: "Tanishq Kaura",
-        company: "",
-        position: "",
+        company: "Boys Played Well",
+        position: "Founder",
         imageUrl: "/images/TestimonialsImagefs/TanishqKaura1.jpeg",
         clientUrl: "https://in.linkedin.com/in/tanishq-kaura-ab3358268",
         projects: [

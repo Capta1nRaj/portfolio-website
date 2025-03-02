@@ -2,9 +2,9 @@ import Image from 'next/image'
 import React from 'react'
 import LocationIcon from '../images/IntroSectionIcons/LocationIcon'
 import Link from 'next/link'
-import { FaTwitter, FaLinkedin, FaInstagram, FaGithub } from 'react-icons/fa'
+import { FaTwitter, FaLinkedin, FaInstagram, FaGithub, FaMedium } from 'react-icons/fa'
 
-const buttonProperties = `px-4 py-2 uppercase border border-reddish text-xl transition-all duration-500 ease-in-out hover:bg-reddish font-medium hover:drop-shadow-[2px_2px_4px_#ffffff]`
+const buttonProperties = `px-4 py-2 uppercase border-2 border-reddish text-xl defaultTransitionCSS hover:bg-reddish font-medium hover:drop-shadow-[2px_2px_2px_#ffffff]`;
 
 export default function IntroSection() {
     return (
@@ -54,6 +54,9 @@ export default function IntroSection() {
                         </Link>
                         <Link href="https://github.com/Capta1nCodes" className="defaultTransitionCSS p-3 rounded bg-[#111111] border border-gray-600 hover:text-reddish" target="_blank">
                             <FaGithub />
+                        </Link>
+                        <Link href="https://medium.com/@priyalraj" className="defaultTransitionCSS p-3 rounded bg-[#111111] border border-gray-600 hover:text-reddish" target="_blank">
+                            <FaMedium />
                         </Link>
                     </div>
                 </div>
