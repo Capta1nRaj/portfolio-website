@@ -35,15 +35,15 @@ export const TestimonialsConstants: TestimonialType[] = [
             { name: "IMDb page", url: "https://www.imdb.com/name/nm7858569" }
         ],
     },
-    // {
-    //     body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
-    //     author: "Siddharth Nair",
-    //     company: "Bravas Digital",
-    //     position: "CEO",
-    //     imageUrl: "/images/TestimonialsImagefs/SiddharthNair1.jpeg",
-    //     clientUrl: "https://www.linkedin.com/in/siddharth-nair-b30a3413b/",
-    //     projects: [{ name: "Bravas Digital", url: "https://www.bravasdigital.com" }],
-    // },
+    {
+        body: "We have worked with Priyal on multiple projects and his understanding of the space is brilliant. He is a solution getter which is key in such a dynamic space and has always been very responsive and prompt. I would recommend Priyal to anyone looking for a reliable website partner.",
+        author: "Siddharth Nair",
+        company: "Bravas Digital",
+        position: "CEO",
+        imageUrl: "/images/TestimonialsImagefs/SiddharthNair1.jpeg",
+        clientUrl: "https://www.linkedin.com/in/siddharth-nair-b30a3413b/",
+        projects: [{ name: "Bravas Digital", url: "https://www.bravasdigital.com" }],
+    },
     {
         body: "The project was completed in the given time with proper and friendly support.",
         author: "Parth Panjwani",

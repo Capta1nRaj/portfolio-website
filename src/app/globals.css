@@ -13,11 +13,33 @@ body {
   background: #040406;
 }
 
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;
+/* Body Scrollbar CSS */
+body::-webkit-scrollbar {
+  width: 4px;               /* width of the entire scrollbar */
 }
 
-.scrollbar-hide {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+body::-webkit-scrollbar-track {
+  background: #ffffff;        /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #ffffff;    /* color of the scroll thumb */
+  background-color: #ff3258;
+}
+
+.testimonials-item-body {
+  overflow-y: auto;
+}
+
+/* Body Scrollbar CSS */
+.testimonials-item-body::-webkit-scrollbar {
+  width: 1px; /* width of the entire scrollbar */
+}
+
+.testimonials-item-body::-webkit-scrollbar-track {
+  background: #ffffff; /* color of the tracking area */
+}
+
+.testimonials-item-body::-webkit-scrollbar-thumb {
+  background-color: #ff3258; /* color of the scroll thumb */
 }

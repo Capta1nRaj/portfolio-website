@@ -5,9 +5,10 @@ import Image from "next/image";
 import { TestimonialsConstants } from "@/constants/TestimonialsConstants";
 import { GetSocialIconFromUrl } from "@/utils/GetSocialIconFromUrl";
 
-export default function TestimonialSectionMerged() {
+export default function TestimonialsLayout({ slice, showButton = true }: { slice?: number, showButton?: boolean }) {
+
     // Show only the first 3 testimonials for now.
-    const displayedTestimonials = TestimonialsConstants.slice(0, 3);
+    const displayedTestimonials = TestimonialsConstants.slice(0, slice ? slice : 9999);
 
     return (
         <section className="bg-black text-white py-12" id="testimonials">
@@ -40,7 +41,7 @@ export default function TestimonialSectionMerged() {
                                     <span>{item.company}</span>
                                 </div>
                             </Link>
-                            <blockquote className="mb-4 italic text-xl text-[#F2F2F2]">
+                            <blockquote className="testimonials-item-body mb-4 italic text-xl text-[#F2F2F2] h-48 px-4">
                                 “{item.body}”
                             </blockquote>
                             {/* Projects Section */}
@@ -67,7 +68,7 @@ export default function TestimonialSectionMerged() {
                     ))}
                 </div>
                 {/* "View More" Button */}
-                {TestimonialsConstants.length > 3 && (
+                {showButton && TestimonialsConstants.length > 3 && (
                     <div className="mt-12 flex justify-center">
                         <Link
                             href="/testimonials"

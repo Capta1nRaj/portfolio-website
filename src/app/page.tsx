@@ -4,15 +4,14 @@ import IntroSection from "@/layouts/IntroSection";
 import MyProjects from "@/layouts/MyProjects";
 import NavBar from "@/layouts/NavBar";
 import SkillsSection from "@/layouts/SkillsSection";
-import TestimonialSection from "@/layouts/TestimonialsLayout";
-import Link from "next/link";
+import TestimonialsLayout from "@/layouts/TestimonialsLayout";
 
 export default function Home() {
   return (
     <>
       <NavBar />
       <IntroSection />
-      <TestimonialSection />
+      <TestimonialsLayout slice={3} />
       <SkillsSection />
       <MyProjects />
       <ContactUsLayout />
