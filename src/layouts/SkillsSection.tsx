@@ -18,6 +18,7 @@ const SkillsSection = () => {
                     <SkillsImage imageAndAltName='mongoose' imageName='Mongoose' />
                     <SkillsImage imageAndAltName='nodejs' imageName='Node.js' />
                     <SkillsImage imageAndAltName='expressjs' imageName='Express.js' />
+                    <SkillsImage imageAndAltName='redis' imageName='Redis' />
                     <SkillsImage imageAndAltName='git' imageName='Git' />
                     <SkillsImage imageAndAltName='figma' imageName='Figma' />
                     <SkillsImage imageAndAltName='chartjs' imageName='Chart.js' />
