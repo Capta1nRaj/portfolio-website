@@ -9,7 +9,7 @@ export default function ContactUsLayout() {
                     <h2 className="max-w-xl text-3xl font-bold tracking-tight text-white sm:text-4xl">
                         Let{`'`}s Bring Your Project to Life.
                     </h2>
-                    <p className="mt-4 text-lg text-gray-300 w-[36rem]">
+                    <p className="mt-4 text-lg text-gray-300 max-w-[36rem]">
                         I{`'`}m a dedicated freelancer ready to collaborate with you. Together, we can turn your ideas into reality and elevate your business to new heights.
                     </p>
                 </div>

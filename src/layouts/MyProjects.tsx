@@ -106,7 +106,7 @@ export default function MyProjects() {
                 <Headings title="projects" subHeading="Global Standards in Project Excellence" />
 
                 {/* Filter Buttons */}
-                <div className="flex justify-center space-x-4 mt-8">
+                <div className="flex justify-center space-x-4 mt-8 teeny:text-base text-[10px]">
                     {[
                         { id: 'all', label: 'All', icon: <FaSearch /> },
                         { id: 'client', label: 'Client Projects', icon: <FaBriefcase /> },
