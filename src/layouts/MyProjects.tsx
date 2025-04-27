@@ -76,6 +76,15 @@ const projectData = [
         image: '/assets/images/MyProjectsSectionImages/consultingWebsite.png',
         imageAlt: 'Consulting Website',
         category: 'personal'
+    },
+    {
+        title: 'Cake Shop Website',
+        description: 'A modern, professional platform designed for cake shops, featuring a clean, responsive layout, intuitive navigation, and engaging visuals that effectively showcase services and success stories to attract potential clients.',
+        link: 'https://cake-website-template.vercel.app',
+        gitHubLink: '',
+        image: '/assets/images/MyProjectsSectionImages/cakeShopWebsite.png',
+        imageAlt: 'Cake Shop Website',
+        category: 'personal'
     }
 ];
 
@@ -88,6 +97,7 @@ const customOrder = [
     'Email Armor Docs',
     'BLYT',
     'Loop Card',
+    'Cake Shop Website'
 ];
 
 export default function MyProjects() {
