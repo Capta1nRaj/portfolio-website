@@ -9,6 +9,15 @@ import { FaSearch, FaBriefcase, FaUser } from 'react-icons/fa';
 // Projects list
 const projectData = [
     {
+        title: 'Trainshala',
+        description: 'Trainshala connects you with expert trainers and business coaches, providing a flexible and high-quality platform for personal and professional growth.',
+        link: 'https://trainshala.com',
+        gitHubLink: '',
+        image: '/assets/images/MyProjectsSectionImages/trainshala.png',
+        imageAlt: 'Trainshala Project',
+        category: 'client'
+    },
+    {
         title: 'ShaveLinks',
         description:
             'ShaveLinks is a comprehensive URL shortener tool offering custom link creation, detailed analytics, and secure link management – a must-have for digital marketing.',
