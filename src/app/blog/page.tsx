@@ -17,9 +17,7 @@ export default function BlogPage() {
     return (
         <>
             <NavBar />
-            <Suspense>
-                <AllPostListPageContent />
-            </Suspense>
+            <AllPostListPageContent />
             <FooterLayout />
         </>
     )

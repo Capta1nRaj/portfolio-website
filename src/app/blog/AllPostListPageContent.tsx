@@ -2,12 +2,10 @@
 
 import { simpleBlogCard } from "@/lib/interface";
 import { urlFor } from "@/lib/sanity";
-import { GetHomepagePost } from "@/server/GetHomepagePost";
 import { PortableText } from "next-sanity";
 import Image from "next/image";
 import Link from "next/link";
 import { useRef, useCallback, useEffect, useState } from "react";
-import { FetchEachBlogPostViews } from "./FetchEachBlogPostViews";
 
 // Responsive container widths
 const maxWidthCSS = "2xl:max-w-[1440px] xl:max-w-screen-xl lg:max-w-[1155px] md:max-w-4xl max-w-2xl";
@@ -18,16 +16,40 @@ const POSTS_PER_PAGE = 6;
 // For storing post views
 type PostViews = { [key: string]: number };
 
-// Utility function to fetch post views
+// Utility function to fetch post views in batch
 async function fetchPostViews(posts: simpleBlogCard[]): Promise<PostViews> {
-    const views: PostViews = {};
-    const fetchPromises = posts.map((post) =>
-        FetchEachBlogPostViews(post.currentSlug)
-            .then(({ postViews }) => { views[post.currentSlug] = postViews; })
-            .catch((error) => { console.error(`Error fetching views for ${post.currentSlug}:`, error); views[post.currentSlug] = 0; })
-    );
-    await Promise.all(fetchPromises);
-    return views;
+    try {
+        const blogIds = posts.map(post => post.currentSlug);
+        const response = await fetch('/api/blog-views', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ blogIds })
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+            return result.data;
+        } else {
+            console.error('Failed to fetch blog views:', result.error);
+            // Return default views (0) for all posts if API fails
+            const defaultViews: PostViews = {};
+            blogIds.forEach(id => {
+                defaultViews[id] = 0;
+            });
+            return defaultViews;
+        }
+    } catch (error) {
+        console.error('Error fetching blog views:', error);
+        // Return default views (0) for all posts if fetch fails
+        const defaultViews: PostViews = {};
+        posts.forEach(post => {
+            defaultViews[post.currentSlug] = 0;
+        });
+        return defaultViews;
+    }
 }
 
 export default function AllPostListPageContent() {
@@ -41,27 +63,41 @@ export default function AllPostListPageContent() {
     const fetchData = useCallback(async (page: number) => {
         setIsLoading(true);
         const start = page * POSTS_PER_PAGE;
-        const newData = await GetHomepagePost(start, POSTS_PER_PAGE);
 
-        // Merge with existing data, avoiding duplicates
-        setData((prev) => {
-            const uniqueNewData = newData.filter((post: { currentSlug: string; }) => !prev.some((p) => p.currentSlug === post.currentSlug));
-            return [...prev, ...uniqueNewData];
-        });
+        try {
+            const response = await fetch(`/api/blog?start=${start}&limit=${POSTS_PER_PAGE}`);
+            const result = await response.json();
 
-        // Fetch post views for these new posts
-        fetchPostViews(newData)
-            .then((newPostViews) => { setPostViews((prevViews) => ({ ...prevViews, ...newPostViews })); })
-            .catch((error) => { console.error("Error updating post views:", error); });
+            if (result.success) {
+                const newData = result.data;
+
+                // Merge with existing data, avoiding duplicates
+                setData((prev) => {
+                    const uniqueNewData = newData.filter((post: { currentSlug: string; }) => !prev.some((p) => p.currentSlug === post.currentSlug));
+                    return [...prev, ...uniqueNewData];
+                });
+
+                // Fetch post views for these new posts
+                fetchPostViews(newData)
+                    .then((newPostViews) => { setPostViews((prevViews) => ({ ...prevViews, ...newPostViews })); })
+                    .catch((error) => { console.error("Error updating post views:", error); });
+
+                // If fewer than POSTS_PER_PAGE returned, we've reached the end
+                if (newData.length < POSTS_PER_PAGE) { setHasMore(false); }
+            } else {
+                console.error('Failed to fetch blog posts:', result.error);
+            }
+        } catch (error) {
+            console.error('Error fetching blog posts:', error);
+        }
 
         setIsLoading(false);
-
-        // If fewer than POSTS_PER_PAGE returned, we've reached the end
-        if (newData.length < POSTS_PER_PAGE) { setHasMore(false); }
     }, []);
 
     // Trigger data fetch whenever currentPage changes
-    useEffect(() => { fetchData(currentPage); }, [currentPage, fetchData]);
+    useEffect(() => {
+        fetchData(currentPage);
+    }, [currentPage, fetchData]);
 
     // Intersection Observer for infinite scrolling
     const observer = useRef<IntersectionObserver | null>(null);

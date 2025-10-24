@@ -8,7 +8,7 @@ export async function IncrementArticleViewsAction(blogID: string) {
 
         await connect2MongoDB();
 
-        await BlogPostViewsModel.updateOne({ blogID }, { $inc: { views: 1 } }, { new: true, upsert: true });
+        await BlogPostViewsModel.updateOne({ blogID }, { $inc: { views: 1 } }, { upsert: true });
 
         return { status: 200 };
 

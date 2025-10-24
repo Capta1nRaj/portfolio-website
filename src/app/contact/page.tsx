@@ -39,22 +39,98 @@ export default function ContactMeDarkMerged() {
     const [isLoading, setIsLoading] = useState(false);
     const [showThankYou, setShowThankYou] = useState(false);
 
+    // ✅ SECURITY FIX: Enhanced client-side validation
+    const validateEmail = (email: string): boolean => {
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        return emailRegex.test(email);
+    };
+
+    const validatePhone = (phone: string): boolean => {
+        const phoneRegex = /^[+]?[\d\s\-()]{7,20}$/;
+        return phoneRegex.test(phone);
+    };
+
+    // ✅ SECURITY FIX: Sanitize input to prevent XSS
+    const sanitizeInput = (input: string): string => {
+        return input.replace(/[<>]/g, '').trim();
+    };
+
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+        const { name, value } = e.target;
+
+        // ✅ SECURITY FIX: Apply sanitization on input
+        const sanitizedValue = sanitizeInput(value);
+
+        setFormData((prev) => ({ ...prev, [name]: sanitizedValue }));
+    };
+
+    // ✅ SECURITY FIX: Enhanced validation
+    const validateForm = (): boolean => {
+        if (!formData.fullName || formData.fullName.length < 2) {
+            toast.error("Full name must be at least 2 characters");
+            return false;
+        }
+
+        if (formData.fullName.length > 100) {
+            toast.error("Full name is too long");
+            return false;
+        }
+
+        if (!formData.contactNumber || !validatePhone(formData.contactNumber)) {
+            toast.error("Please enter a valid contact number");
+            return false;
+        }
+
+        if (!formData.email || !validateEmail(formData.email)) {
+            toast.error("Please enter a valid email address");
+            return false;
+        }
+
+        if (!formData.message || formData.message.length < 10) {
+            toast.error("Message must be at least 10 characters");
+            return false;
+        }
+
+        if (formData.message.length > 1000) {
+            toast.error("Message is too long (max 1000 characters)");
+            return false;
+        }
+
+        if (formData.companyName && formData.companyName.length > 100) {
+            toast.error("Company name is too long");
+            return false;
+        }
+
+        return true;
     };
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        // Validate required fields
-        if (!formData.fullName || !formData.contactNumber || !formData.email || !formData.message) { return toast.error("Please fill in all required fields."); }
+
+        // ✅ SECURITY FIX: Enhanced validation before submission
+        if (!validateForm()) {
+            return;
+        }
 
         setIsLoading(true);
 
         try {
-            const { status } = await ContactAction(formData);
-            if (!status) { return toast.error("Error sending query. Please try again later."); }
-            setFormData({ fullName: "", contactNumber: "", companyName: "", email: "", message: "", });
+            const result = await ContactAction(formData);
+
+            if (!result.status) {
+                toast.error(result.error || "Error sending query. Please try again later.");
+                return;
+            }
+
+            setFormData({
+                fullName: "",
+                contactNumber: "",
+                companyName: "",
+                email: "",
+                message: ""
+            });
             setShowThankYou(true);
+
         } catch (error) {
             toast.error("Error sending query. Please try again later.");
         } finally {
@@ -93,6 +169,7 @@ export default function ContactMeDarkMerged() {
                     href="https://twitter.com/Capta1nCodes"
                     className="defaultTransitionCSS p-3 rounded bg-[#111111] border border-gray-600 hover:text-reddish"
                     target="_blank"
+                    rel="noopener noreferrer"
                 >
                     <FaTwitter />
                 </Link>
@@ -100,6 +177,7 @@ export default function ContactMeDarkMerged() {
                     href="https://www.linkedin.com/in/priyalraj99"
                     className="defaultTransitionCSS p-3 rounded bg-[#111111] border border-gray-600 hover:text-reddish"
                     target="_blank"
+                    rel="noopener noreferrer"
                 >
                     <FaLinkedin />
                 </Link>
@@ -107,6 +185,7 @@ export default function ContactMeDarkMerged() {
                     href="https://www.instagram.com/capta1n_raj"
                     className="defaultTransitionCSS p-3 rounded bg-[#111111] border border-gray-600 hover:text-reddish"
                     target="_blank"
+                    rel="noopener noreferrer"
                 >
                     <FaInstagram />
                 </Link>
@@ -114,6 +193,7 @@ export default function ContactMeDarkMerged() {
                     href="https://github.com/Capta1nCodes"
                     className="defaultTransitionCSS p-3 rounded bg-[#111111] border border-gray-600 hover:text-reddish"
                     target="_blank"
+                    rel="noopener noreferrer"
                 >
                     <FaGithub />
                 </Link>
@@ -135,6 +215,8 @@ export default function ContactMeDarkMerged() {
                                 autoComplete="name"
                                 value={formData.fullName}
                                 onChange={handleChange}
+                                maxLength={100}
+                                required
                                 className="block w-full rounded-md bg-[#111111] px-3.5 py-2 text-base outline outline-1 -outline-offset-1 outline-gray-600 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-reddish"
                                 placeholder="John Doe"
                             />
@@ -150,9 +232,11 @@ export default function ContactMeDarkMerged() {
                             <input
                                 id="contact-number"
                                 name="contactNumber"
-                                type="text"
+                                type="tel"
                                 value={formData.contactNumber}
                                 onChange={handleChange}
+                                maxLength={20}
+                                required
                                 placeholder="+91 1234567890"
                                 className="block w-full rounded-md bg-[#111111] px-3.5 py-2 text-base text-[#F2F2F2] placeholder:text-gray-500 outline outline-1 -outline-offset-1 outline-gray-600 focus:outline-2 focus:-outline-offset-2 focus:outline-reddish"
                             />
@@ -172,6 +256,7 @@ export default function ContactMeDarkMerged() {
                                 autoComplete="organization"
                                 value={formData.companyName}
                                 onChange={handleChange}
+                                maxLength={100}
                                 className="block w-full rounded-md bg-[#111111] px-3.5 py-2 text-base outline outline-1 -outline-offset-1 outline-gray-600 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-reddish"
                                 placeholder="(Optional)"
                             />
@@ -191,6 +276,8 @@ export default function ContactMeDarkMerged() {
                                 autoComplete="email"
                                 value={formData.email}
                                 onChange={handleChange}
+                                maxLength={100}
+                                required
                                 className="block w-full rounded-md bg-[#111111] px-3.5 py-2 text-base outline outline-1 -outline-offset-1 outline-gray-600 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-reddish"
                                 placeholder="your@email.com"
                             />
@@ -209,10 +296,15 @@ export default function ContactMeDarkMerged() {
                                 rows={4}
                                 value={formData.message}
                                 onChange={handleChange}
+                                maxLength={1000}
+                                required
                                 className="block w-full rounded-md bg-[#111111] px-3.5 py-2 text-base outline outline-1 -outline-offset-1 outline-gray-600 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-reddish"
                                 placeholder="Let me know what you're looking to build..."
                             />
                         </div>
+                        <p className="mt-1 text-xs text-gray-500">
+                            {formData.message.length}/1000 characters
+                        </p>
                     </div>
                 </div>
 
@@ -221,7 +313,7 @@ export default function ContactMeDarkMerged() {
                     <button
                         type="submit"
                         disabled={isLoading}
-                        className="defaultTransitionCSS flex w-full items-center justify-center rounded-md bg-reddish px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-red-600 focus:outline-none disabled:opacity-50"
+                        className="defaultTransitionCSS flex w-full items-center justify-center rounded-md bg-reddish px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-red-600 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                         {isLoading ? "Sending..." : "Submit"}
                     </button>
