@@ -2,6 +2,9 @@ import { NextRequest, NextResponse } from 'next/server';
 import BlogPostViewsModel from "@/models/BlogPostViewsModel";
 import { connect2MongoDB } from "connect2mongodb";
 
+// Force dynamic rendering for this API route
+export const dynamic = 'force-dynamic';
+
 export async function POST(request: NextRequest) {
     try {
         await connect2MongoDB();

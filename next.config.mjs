@@ -7,7 +7,6 @@ const nextConfig = {
             { protocol: 'https', hostname: 'images.unsplash.com' }
         ],
     },
-
     // ✅ SECURITY FIX: Add security headers
     async headers() {
         return [
@@ -53,23 +52,6 @@ const nextConfig = {
                     {
                         key: 'Cross-Origin-Opener-Policy',
                         value: 'same-origin'
-                    },
-                    {
-                        key: 'Content-Security-Policy',
-                        value: `
-                            default-src 'self';
-                            script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com;
-                            style-src 'self' 'unsafe-inline';
-                            img-src 'self' data: https: blob:;
-                            font-src 'self' data:;
-                            connect-src 'self' https://www.google-analytics.com https://ipapi.co;
-                            frame-src 'self';
-                            object-src 'none';
-                            base-uri 'self';
-                            form-action 'self';
-                            frame-ancestors 'self';
-                            upgrade-insecure-requests;
-                        `.replace(/\s{2,}/g, ' ').trim()
                     }
                 ],
             },
