@@ -18,6 +18,15 @@ const projectData = [
         category: 'client'
     },
     {
+        title: 'Nativlang',
+        description: 'Nativlang is a platform for learning languages, providing a flexible and high-quality platform for learning languages.',
+        link: 'https://nativlang.in',
+        gitHubLink: '',
+        image: '/assets/images/MyProjectsSectionImages/nativlang.png',
+        imageAlt: 'Nativlang Project',
+        category: 'client'
+    },
+    {
         title: 'ShaveLinks',
         description:
             'ShaveLinks is a comprehensive URL shortener tool offering custom link creation, detailed analytics, and secure link management – a must-have for digital marketing.',
@@ -41,7 +50,7 @@ const projectData = [
         title: 'Bravas Digital',
         description:
             'A full-service digital marketing agency delivering data-driven strategies and creative campaigns that boost brand presence and maximize ROI.',
-        link: 'https://www.bravasdigital.com',
+        link: 'https://bravos-11.vercel.app/',
         gitHubLink: '',
         image: '/assets/images/MyProjectsSectionImages/bravasdigital.png',
         imageAlt: 'Bravas Digital Project',
@@ -86,27 +95,29 @@ const projectData = [
         imageAlt: 'Consulting Website',
         category: 'personal'
     },
-    {
-        title: 'Cake Shop Website',
-        description: 'A modern, professional platform designed for cake shops, featuring a clean, responsive layout, intuitive navigation, and engaging visuals that effectively showcase services and success stories to attract potential clients.',
-        link: 'https://cake-website-template.vercel.app',
-        gitHubLink: '',
-        image: '/assets/images/MyProjectsSectionImages/cakeShopWebsite.png',
-        imageAlt: 'Cake Shop Website',
-        category: 'personal'
-    }
+    // {
+    //     title: 'Cake Shop Website',
+    //     description: 'A modern, professional platform designed for cake shops, featuring a clean, responsive layout, intuitive navigation, and engaging visuals that effectively showcase services and success stories to attract potential clients.',
+    //     link: 'https://cake-website-template.vercel.app',
+    //     gitHubLink: '',
+    //     image: '/assets/images/MyProjectsSectionImages/cakeShopWebsite.png',
+    //     imageAlt: 'Cake Shop Website',
+    //     category: 'personal'
+    // }
 ];
 
 // Define your custom order by project title (or unique identifier)
 const customOrder = [
+    'Trainshala',
+    'Nativlang',
+    'BLYT',
     'Modaro Health',
+    'Loop Card',
     'Bravas Digital',
     'Consulting Website',
     'ShaveLinks',
     'Email Armor Docs',
-    'BLYT',
-    'Loop Card',
-    'Cake Shop Website'
+    'Cake Shop Website',
 ];
 
 export default function MyProjects() {

@@ -182,14 +182,6 @@ export default function ContactMeDarkMerged() {
                     <FaLinkedin />
                 </Link>
                 <Link
-                    href="https://www.instagram.com/capta1n_raj"
-                    className="defaultTransitionCSS p-3 rounded bg-[#111111] border border-gray-600 hover:text-reddish"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    <FaInstagram />
-                </Link>
-                <Link
                     href="https://github.com/Capta1nCodes"
                     className="defaultTransitionCSS p-3 rounded bg-[#111111] border border-gray-600 hover:text-reddish"
                     target="_blank"

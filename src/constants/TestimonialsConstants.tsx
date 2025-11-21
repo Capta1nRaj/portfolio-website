@@ -42,7 +42,7 @@ export const TestimonialsConstants: TestimonialType[] = [
         position: "CEO",
         imageUrl: "/images/TestimonialsImagefs/SiddharthNair1.jpeg",
         clientUrl: "https://www.linkedin.com/in/siddharth-nair-b30a3413b/",
-        projects: [{ name: "Bravas Digital", url: "https://www.bravasdigital.com" }],
+        projects: [{ name: "Bravas Digital", url: "https://bravos-11.vercel.app/" }],
     },
     {
         body: "The project was completed in the given time with proper and friendly support.",
