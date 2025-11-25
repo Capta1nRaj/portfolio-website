@@ -1,5 +1,4 @@
 import React from "react";
-import { TestimonialsConstants } from "@/constants/TestimonialsConstants";
 import { Metadata } from "next";
 import NavBar from "@/layouts/NavBar";
 import FooterLayout from "@/layouts/FooterLayout";
@@ -16,9 +15,6 @@ export const metadata: Metadata = {
 };
 
 export default function TestimonialsPage() {
-    // Render all testimonials from the constants
-    const allTestimonials = TestimonialsConstants;
-
     return (
         <>
             <NavBar />

@@ -15,6 +15,18 @@ type TestimonialType = {
 
 export const TestimonialsConstants: TestimonialType[] = [
     {
+        body: "Hi i am NiQ, CEO of Blyt and i would love to have a meaningful testimonial dedicated to this young talented man here, his name is Priyal! \n\n" +
+            "He has been responsible and attentive tbroughout the project, always giving me and my team extra values and insights, never calculative and always helping whenever needed. \n\n" +
+            "Double thumbs up to your professionalism and thank you so much for the help overall, very much appreciated! \n\n" +
+            "Keep it up, and see you at the Top!",
+        author: "NiQ Chong",
+        company: "Blyt",
+        position: "CEO",
+        imageUrl: "/images/TestimonialsImagefs/NiqChong1.jpg",
+        clientUrl: "https://www.linkedin.com/in/niqchong",
+        projects: [{ name: "Blyt", url: "https://blyt.world" }],
+    },
+    {
         body: "Your work on Modaro Health was outstanding! Skilled, fast, and reliable—you delivered on time and at a fair price. Truly appreciate your execution. Highly recommend you! Looking forward to working again.",
         author: "Ankur Morbale",
         company: "Modaro Health",

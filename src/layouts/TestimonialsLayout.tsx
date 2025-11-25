@@ -22,7 +22,7 @@ export default function TestimonialsLayout({ slice, showButton = true }: { slice
                     {displayedTestimonials.map((item, index) => (
                         <div
                             key={index}
-                            className="relative bg-gradient-to-br from-[#111111] to-gray-800 border-2 border-white rounded-2xl p-6 drop-shadow-lg text-center transition-all duration-300 hover:-translate-y-2 hover:border-reddish"
+                            className="relative bg-gradient-to-br from-[#111111] to-gray-800 border-2 border-white rounded-2xl p-4 drop-shadow-lg text-center transition-all duration-300 hover:-translate-y-2 hover:border-reddish"
                         >
                             {/* Social Icon from Client URL at Top-Right */}
                             <div className="absolute top-4 right-4">
@@ -41,7 +41,7 @@ export default function TestimonialsLayout({ slice, showButton = true }: { slice
                                     <span>{item.company}</span>
                                 </div>
                             </Link>
-                            <blockquote className="testimonials-item-body mb-4 italic text-xl text-[#F2F2F2] h-48 px-4">
+                            <blockquote className="testimonials-item-body mb-4 italic text-base text-[#F2F2F2] h-48 px-4">
                                 “{item.body}”
                             </blockquote>
                             {/* Projects Section */}
