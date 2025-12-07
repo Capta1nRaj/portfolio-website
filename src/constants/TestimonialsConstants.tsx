@@ -29,8 +29,8 @@ export const TestimonialsConstants: TestimonialType[] = [
     {
         body: "I had a wonderful experience working with Priyal for our website nativlang.in. He understands our requirements very quickly and always suggests the best solutions. He is extremely fast with delivery and maintains great quality in his work. His professionalism and commitment made the entire process smooth and hassle-free. Highly recommended for anyone looking for a reliable and efficient website developer!",
         author: "Purvi Teckwani",
-        company: "",
-        position: "",
+        company: "NativLang",
+        position: "Founder",
         imageUrl: "/images/TestimonialsImagefs/PurviTeckwani1.png",
         clientUrl: "https://in.linkedin.com/in/purvi-teckwani-543a02125",
         projects: [{ name: "NativLang", url: "https://www.nativlang.in" }],
