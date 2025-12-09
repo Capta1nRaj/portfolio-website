@@ -153,7 +153,7 @@ export default function MyProjects() {
                 </div>
 
                 {/* Project Cards */}
-                <div className="mt-10 grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-4">
+                <div className="mt-10 grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                     {sortedProjects.map((project, idx) => (
                         <div key={idx} className="bg-lightblack border-2 border-white rounded-xl overflow-hidden shadow-lg defaultTransitionCSS hover:scale-105 hover:border-reddish flex flex-col">
                             {/* Project Image */}

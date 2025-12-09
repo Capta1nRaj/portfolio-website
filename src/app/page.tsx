@@ -13,7 +13,12 @@ export default function Home() {
       <NavBar />
       <IntroSection />
       <StatsSection />
-      <TestimonialsLayout slice={3} />
+      <div className="lg:block sm:hidden block">
+        <TestimonialsLayout slice={3} />
+      </div>
+      <div className="lg:hidden sm:block hidden">
+        <TestimonialsLayout slice={4} />
+      </div>
       <MyProjects />
       <SkillsSection />
       <ContactUsLayout />

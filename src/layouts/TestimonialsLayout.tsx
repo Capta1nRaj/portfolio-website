@@ -18,7 +18,7 @@ export default function TestimonialsLayout({ slice, showButton = true }: { slice
                     <Headings title="What Clients Say" subHeading="Stories of impact and outcomes" />
                 </div>
                 {/* 3-Column Grid */}
-                <div className="mt-10 grid gap-8 md:grid-cols-3">
+                <div className="mt-10 grid gap-8 lg:grid-cols-3 sm:grid-cols-2">
                     {displayedTestimonials.map((item, index) => (
                         <div
                             key={index}
