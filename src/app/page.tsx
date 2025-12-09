@@ -1,6 +1,7 @@
 import ContactUsLayout from "@/layouts/ContactUsLayout";
 import FooterLayout from "@/layouts/FooterLayout";
 import IntroSection from "@/layouts/IntroSection";
+import StatsSection from "@/layouts/StatsSection";
 import MyProjects from "@/layouts/MyProjects";
 import NavBar from "@/layouts/NavBar";
 import SkillsSection from "@/layouts/SkillsSection";
@@ -11,9 +12,10 @@ export default function Home() {
     <>
       <NavBar />
       <IntroSection />
+      <StatsSection />
       <TestimonialsLayout slice={3} />
-      <SkillsSection />
       <MyProjects />
+      <SkillsSection />
       <ContactUsLayout />
       <FooterLayout />
     </>
