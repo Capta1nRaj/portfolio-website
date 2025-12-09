@@ -131,9 +131,9 @@ export default function MyProjects() {
     const sortedProjects = [...filteredProjects].sort((a, b) => { return customOrder.indexOf(a.title) - customOrder.indexOf(b.title); });
 
     return (
-        <section id="projects" className="bg-black text-white py-12 px-4 md:px-8 lg:px-16 xl:px-24">
+        <section id="projects" className="bg-lightblack text-white sm:py-20 py-10 px-4 md:px-8 lg:px-16 xl:px-24">
             <div className="max-w-screen-xl mx-auto">
-                <Headings title="projects" subHeading="Global Standards in Project Excellence" />
+                <Headings title="Selected Work" subHeading="Recent projects & real results" />
 
                 {/* Filter Buttons */}
                 <div className="flex justify-center space-x-4 mt-8 teeny:text-base text-[10px]">
@@ -145,8 +145,7 @@ export default function MyProjects() {
                         <button
                             key={btn.id}
                             onClick={() => setFilter(btn.id)}
-                            className={`flex items-center gap-2 px-4 py-2 rounded-full defaultTransitionCSS font-medium border-2
-                            ${filter === btn.id ? 'bg-reddish text-black shadow-[0_0_10px_2px_rgba(255,0,0,0.6)] border-reddish' : 'bg-black border-white text-white hover:bg-gray-900'}`}>
+                            className={`flex items-center gap-2 px-4 py-2 rounded-full defaultTransitionCSS font-medium border-2 ${filter === btn.id ? 'bg-reddish text-black border-reddish' : 'bg-black border-white text-white hover:bg-reddish hover:border-reddish hover:text-black'}`}>
                             <span>{btn.icon}</span>
                             <span>{btn.label}</span>
                         </button>
@@ -156,7 +155,7 @@ export default function MyProjects() {
                 {/* Project Cards */}
                 <div className="mt-10 grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-4">
                     {sortedProjects.map((project, idx) => (
-                        <div key={idx} className="bg-[#111111] border-2 border-white rounded-xl overflow-hidden shadow-lg defaultTransitionCSS hover:scale-105 hover:border-reddish flex flex-col">
+                        <div key={idx} className="bg-lightblack border-2 border-white rounded-xl overflow-hidden shadow-lg defaultTransitionCSS hover:scale-105 hover:border-reddish flex flex-col">
                             {/* Project Image */}
                             <div className="relative h-[200px] w-full">
                                 <Image src={project.image} alt={project.imageAlt || project.title} width={600} height={200} quality={100} className={`defaultTransitionCSS h-[200px] object-cover ${project.title === "Email Armor Docs" ? "" : "object-top"}`} />

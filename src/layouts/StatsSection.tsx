@@ -1,5 +1,6 @@
 import React from 'react';
 import Headings from '@/components/Headings';
+import Link from 'next/link';
 
 const stats = [
     { id: 1, name: 'Years Experience', value: '3+' },
@@ -9,7 +10,7 @@ const stats = [
 
 export default function StatsSection() {
     return (
-        <section className="bg-lightblack text-white py-20 overflow-hidden">
+        <section className="bg-lightblack text-white sm:py-20 py-10 overflow-hidden">
             <div className="max-w-screen-xl mx-auto px-4 md:px-8 lg:px-16 xl:px-24 relative z-10">
                 <Headings title="Built. Delivered. Proven." subHeading="Key metrics that show what I ship for clients." />
 

@@ -11,11 +11,11 @@ export default function TestimonialsLayout({ slice, showButton = true }: { slice
     const displayedTestimonials = TestimonialsConstants.slice(0, slice ? slice : 9999);
 
     return (
-        <section className="bg-black text-white py-12" id="testimonials">
+        <section className="bg-black text-white sm:py-20 py-10" id="testimonials">
             <div className="mx-auto max-w-7xl px-4">
                 {/* Heading */}
                 <div className="mx-auto max-w-2xl text-center">
-                    <Headings title="testimonials" subHeading="Client Experiences & Success Stories" />
+                    <Headings title="What Clients Say" subHeading="Stories of impact and outcomes" />
                 </div>
                 {/* 3-Column Grid */}
                 <div className="mt-10 grid gap-8 md:grid-cols-3">
@@ -72,7 +72,7 @@ export default function TestimonialsLayout({ slice, showButton = true }: { slice
                     <div className="mt-12 flex justify-center">
                         <Link
                             href="/testimonials"
-                            className="text-xl inline-block border-2 border-reddish text-white px-8 py-3 rounded-full defaultTransitionCSS hover:bg-reddish hover:rotate-3 hover:scale-105 shadow-lg hover:shadow-reddish/50 font-medium"
+                            className="text-xl inline-block border-2 border-reddish text-white px-8 py-3 rounded-full defaultTransitionCSS hover:bg-reddish shadow-lg font-medium"
                         >
                             Hear from Our Clients
                         </Link>

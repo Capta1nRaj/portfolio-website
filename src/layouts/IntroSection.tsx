@@ -4,11 +4,11 @@ import LocationIcon from '../images/IntroSectionIcons/LocationIcon'
 import Link from 'next/link'
 import { FaTwitter, FaLinkedin, FaInstagram, FaGithub, FaMedium } from 'react-icons/fa'
 
-const buttonProperties = `px-4 py-2 uppercase border-2 border-reddish text-xl defaultTransitionCSS hover:bg-reddish font-medium hover:drop-shadow-[2px_2px_2px_#ffffff]`;
+const buttonProperties = `px-4 py-2 uppercase border-2 border-reddish text-xl defaultTransitionCSS hover:bg-reddish font-medium`;
 
 export default function IntroSection() {
     return (
-        <div className="bg-[url('/assets/images/IntroSectionImages/background-image.jpg')] bg-cover bg-center bg-no-repeat h-full text-white py-20">
+        <div className="bg-[url('/assets/images/IntroSectionImages/background-image.jpg')] bg-cover bg-center bg-no-repeat h-full text-white sm:py-20 py-10">
             <div className="max-w-screen-xl mx-auto px-4 flex flex-col-reverse lg:flex-row gap-10 items-center">
 
                 <div className="flex-1 space-y-6 lg:pr-8 text-center lg:text-left">
@@ -21,7 +21,7 @@ export default function IntroSection() {
                         I love transforming complex ideas into practical, user-friendly solutions
                         that deliver real value. Let’s bring your vision to life!
                     </p>
-                    <div className="flex items-center gap-2 text-sm font-bold">
+                    <div className="flex items-center gap-2 text-sm font-bold lg:justify-start justify-center">
                         <div className="flex items-center">
                             <LocationIcon />
                             <span className="ml-2">Patna, Bihar</span>
@@ -31,7 +31,7 @@ export default function IntroSection() {
                             <span>Available For New Projects</span>
                         </div>
                     </div>
-                    <div className="flex gap-3 mt-4">
+                    <div className="flex gap-3 mt-4 lg:justify-start justify-center">
                         <Link
                             href="https://drive.google.com/file/d/14LOvlVKr707ntHYhGn3x7SJPxOpmKH8m/view?usp=sharing"
                             target="_blank"
@@ -42,7 +42,7 @@ export default function IntroSection() {
                             <button className={buttonProperties}>Get in touch</button>
                         </Link>
                     </div>
-                    <div className="flex gap-4 mt-4">
+                    <div className="flex gap-4 mt-4 lg:justify-start justify-center">
                         <Link href="https://twitter.com/Capta1nCodes" className="defaultTransitionCSS p-3 rounded bg-[#111111] border border-gray-600 hover:text-reddish" target="_blank">
                             <FaTwitter />
                         </Link>
