@@ -49,9 +49,23 @@ export const metadata: Metadata = {
 }
 
 export default function RootLayout({ children, }: { children: React.ReactNode }) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Priyal Raj",
+    url: "https://priyalraj.com",
+    jobTitle: "Full Stack Web Developer",
+    description: "I’m a Full Stack Web Developer skilled in Next.js, Express.js, and MongoDB. I build robust, scalable web apps and transform ideas into user-friendly solutions.",
+    sameAs: [
+      "https://twitter.com/Capta1nCodes",
+      "https://www.linkedin.com/in/priyalraj99",
+      "https://github.com/Capta1nCodes"
+    ]
+  };
   return (
     <html lang="en">
       <body className={MontserratFont.className}>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         <Toaster position="top-right" expand={true} richColors duration={4000} />
         {children}
         <GoogleAnalytics gaId={`${process.env.GOOGLE_ANALYTICS_MEASUREMENT_ID}`} />
