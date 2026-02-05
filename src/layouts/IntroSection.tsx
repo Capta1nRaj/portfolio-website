@@ -49,7 +49,7 @@ export default function IntroSection() {
                         <Link href="https://www.linkedin.com/in/priyalraj99" className="defaultTransitionCSS p-3 rounded bg-[#111111] border border-gray-600 hover:text-reddish" target="_blank">
                             <FaLinkedin />
                         </Link>
-                        <Link href="https://github.com/Capta1nCodes" className="defaultTransitionCSS p-3 rounded bg-[#111111] border border-gray-600 hover:text-reddish" target="_blank">
+                        <Link href="https://github.com/Capta1nRaj" className="defaultTransitionCSS p-3 rounded bg-[#111111] border border-gray-600 hover:text-reddish" target="_blank">
                             <FaGithub />
                         </Link>
                         <Link href="https://medium.com/@priyalraj" className="defaultTransitionCSS p-3 rounded bg-[#111111] border border-gray-600 hover:text-reddish" target="_blank">
