@@ -26,6 +26,11 @@ const SkillsSection = () => {
                     <SkillsImage imageAndAltName='zustand' imageName='Zustand' />
                     <SkillsImage imageAndAltName='sanity' imageName='Sanity CMS' />
                     <SkillsImage imageAndAltName='fumadocs' imageName='Fumadocs' />
+                    <SkillsImage imageAndAltName='docker' imageName='Docker' ext='svg' />
+                    <SkillsImage imageAndAltName='nginx' imageName='NGINX' ext='svg' />
+                    <SkillsImage imageAndAltName='cicd' imageName='CI/CD' ext='svg' />
+                    <SkillsImage imageAndAltName='golang' imageName='Golang' ext='svg' />
+                    <SkillsImage imageAndAltName='promptengineer' imageName='Prompt Engineer' ext='svg' />
                 </div>
             </div>
         </div>
