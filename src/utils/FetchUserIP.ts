@@ -42,8 +42,10 @@ export async function FetchUserIP(): Promise<string> {
     const FALLBACK_IP_ADDRESS = '0.0.0.0';
 
     try {
+        const headersList = await headers();
+
         // Try X-Forwarded-For first (standard proxy header)
-        const forwardedFor = headers().get('x-forwarded-for');
+        const forwardedFor = headersList.get('x-forwarded-for');
 
         if (forwardedFor) {
             // Get the first IP in the chain (client IP)
@@ -57,19 +59,19 @@ export async function FetchUserIP(): Promise<string> {
         }
 
         // Try X-Real-IP (alternative proxy header)
-        const realIp = headers().get('x-real-ip');
+        const realIp = headersList.get('x-real-ip');
         if (realIp && isValidIP(realIp)) {
             return realIp;
         }
 
         // Try Cloudflare header if behind Cloudflare
-        const cfConnectingIp = headers().get('cf-connecting-ip');
+        const cfConnectingIp = headersList.get('cf-connecting-ip');
         if (cfConnectingIp && isValidIP(cfConnectingIp)) {
             return cfConnectingIp;
         }
 
         // Try other common headers
-        const remoteAddr = headers().get('remote-addr');
+        const remoteAddr = headersList.get('remote-addr');
         if (remoteAddr && isValidIP(remoteAddr)) {
             return remoteAddr;
         }

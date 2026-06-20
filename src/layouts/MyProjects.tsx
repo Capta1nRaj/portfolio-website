@@ -50,7 +50,7 @@ const projectData = [
         title: 'Bravas Digital',
         description:
             'A full-service digital marketing agency delivering data-driven strategies and creative campaigns that boost brand presence and maximize ROI.',
-        link: 'https://bravos-11.vercel.app/',
+        link: 'https://bravas-dl9z.vercel.app/',
         gitHubLink: '',
         image: '/assets/images/MyProjectsSectionImages/bravasdigital.png',
         imageAlt: 'Bravas Digital Project',

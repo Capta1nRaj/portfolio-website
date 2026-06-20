@@ -58,9 +58,9 @@ function blocksToPlainText(blocks: any[]) {
         .join('\n\n');
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
     try {
-        const slug = params.slug;
+        const { slug } = await params;
         const data = await getData(slug);
 
         if (!data) {
@@ -141,9 +141,10 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     }
 }
 
-export default async function BlogPage({ params }: { params: { slug: string } }) {
+export default async function BlogPage({ params }: { params: Promise<{ slug: string }> }) {
     try {
-        const data = await getData(params.slug);
+        const { slug } = await params;
+        const data = await getData(slug);
 
         if (!data) {
             redirect('/blog');
@@ -161,7 +162,7 @@ export default async function BlogPage({ params }: { params: { slug: string } })
         }
 
         // ✅ SECURITY FIX: Pass sanitized slug
-        IncrementArticleViewsAction(sanitizeSlug(params.slug))
+        IncrementArticleViewsAction(sanitizeSlug(slug))
             .then(() => { })
             .catch(() => { });
 
@@ -191,7 +192,7 @@ export default async function BlogPage({ params }: { params: { slug: string } })
                             alt={value.alt || 'Blog image'}
                             width={1497}
                             height={765}
-                            layout="responsive"
+                            style={{ width: '100%', height: 'auto' }}
                         />
                     );
                 },
